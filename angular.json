@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "84d55401-f8c0-4dc8-adff-df0475f55ee3"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -30,7 +31,14 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": []
+              "allowedHosts": [
+                "localhost",
+                "127.0.0.1",
+                "localhost:4200",
+                "127.0.0.1:4200",
+                "localhost:5001",
+                "127.0.0.1:5001"
+              ]
             },
             "ssr": {
               "entry": "src/server.ts"
@@ -67,6 +75,7 @@
               "buildTarget": "Otex.Clients.Shop.Angular:build:production"
             },
             "development": {
+              "proxyConfig": "proxy.conf.js",
               "buildTarget": "Otex.Clients.Shop.Angular:build:development"
             }
           },

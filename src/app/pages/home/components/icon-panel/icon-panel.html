@@ -1,0 +1,83 @@
+<!--
+بهبود کانتینر اصلی:
+سفیدتر شدن بک گراند، اضافه شدن border محو، و سایه بسیار نرم و لوکس
+-->
+<div class="container mx-auto rounded-2xl bg-white/30 backdrop-blur-[1px] border border-porcelain-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] px-5 pb-8 pt-5 flex flex-col gap-6 relative overflow-hidden">
+  <!--  <div class="absolute inset-0 z-[-1] opacity-40 mix-blend-multiply bg-[url('/images/backdrop-01.jpeg')] bg-repeat bg-[length:820px_458px]"></div>-->
+  <!--
+    (اختیاری) یک هاله نورانی بسیار محو در گوشه بالا برای خارج شدن از سادگی
+  -->
+  <div class="absolute -top-10 -end-10 w-32 h-32 bg-porcelain-100/50 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="flex flex-col md:flex-row gap-6">
+    <!-- بخش هدر (عنوان) -->
+    <div class="flex items-center gap-2 visible md:invisible md:hidden">
+      <div class="bg-porcelain-100 text-porcelain-600 p-2.5 rounded-xl rounded-bl-2xl rounded-tr-2xl">
+        <svg class="size-5" id="mdi--category-plus-outline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <!-- SVG شما... -->
+          <path d="M11,11V2H2v9M4,9V4H9V9M20,6.5A2.5,2.5,0,1,1,17.5,4,2.476,2.476,0,0,1,20,6.5M6.5,14,2,22h9M7.58,20H5.42L6.5,18.08M22,6.5A4.5,4.5,0,1,0,17.5,11,4.481,4.481,0,0,0,22,6.5M19,17V14H17v3H14v2h3v3h2V19h3V17Z" fill="#861"/>
+        </svg>
+      </div>
+      <h2 class="text-porcelain-700 font-black text-sm md:text-xl">خدمات پیشنهادی</h2>
+    </div>
+
+    <!--
+      بخش گرید خدمات:
+      به جای flex-between از grid استفاده کردم تا فاصله ها همیشه استاندارد بماند
+    -->
+    <div class="grid grid-cols-4 gap-2 md:gap-8 justify-items-center w-full max-w-2xl mx-auto z-10">
+
+      <app-textify-icon>
+        <p text>لیست قیمت</p>
+        <svg icon xmlns="http://www.w3.org/2000/svg" width="16.333" height="17.235" viewBox="0 0 16.333 17.235">
+          <path id="lsicon--file-pdf-filled"
+                d="M2,1.616A.622.622,0,0,1,2.628,1h8.166a.635.635,0,0,1,.445.18L14.38,4.257a.609.609,0,0,1,.183.436V7.155H13.307V5.924H10.166a.622.622,0,0,1-.628-.616V2.231H3.256V17H13.307v-.616h1.256v1.231a.622.622,0,0,1-.628.616H2.628A.622.622,0,0,1,2,17.619Zm8.795.87V4.693h2.253ZM4.513,9a.622.622,0,0,1,.628-.616H8.282A.622.622,0,0,1,8.91,9V12.08a.622.622,0,0,1-.628.616H5.769v1.847H4.513Zm1.256,2.462H7.654V9.618H5.769Zm3.769,3.078V8.386h3.769A.622.622,0,0,1,13.936,9v4.924a.622.622,0,0,1-.628.616Zm1.256-4.924v3.693h1.885V9.618ZM14.564,9a.622.622,0,0,1,.628-.616h3.141V9.618H15.82v1.847h2.513V12.7H15.82v1.847H14.564Z"
+                transform="translate(-2 -1)" fill="#861" fill-rule="evenodd"/>
+        </svg>
+      </app-textify-icon>
+
+      <app-textify-icon [routerLink]="['/cooperation']">
+        <p text>همکاری با ما</p>
+        <svg icon xmlns="http://www.w3.org/2000/svg" width="22.074" height="24.004" viewBox="0 0 22.074 24.004">
+          <g id="streamline-ultimate--customer-relationship-management-lead-management-1" transform="translate(-0.963)">
+            <path id="Path_18" data-name="Path 18"
+                  d="M2.01,5.1A2.184,2.184,0,1,0,4.194,2.918,2.184,2.184,0,0,0,2.01,5.1m5.628,5.082A3.743,3.743,0,0,0,2.01,8.614M17.622,5.1a2.184,2.184,0,1,0,2.184-2.184A2.184,2.184,0,0,0,17.622,5.1m-1.26,5.082a3.743,3.743,0,0,1,5.628-1.57M8.663,4.087A3.337,3.337,0,1,0,12,.75,3.337,3.337,0,0,0,8.663,4.087"
+                  fill="none" stroke="#861" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            <path id="Path_19" data-name="Path 19"
+                  d="M17.773,11.46a7.807,7.807,0,0,0-11.546,0m9.728,2.4a3.956,3.956,0,1,1-7.911,0" fill="none"
+                  stroke="#861" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            <path id="Path_20" data-name="Path 20"
+                  d="M21.394,13.852v1.487l-1.7.34a7.8,7.8,0,0,1-.973,2.33l.969,1.444-2.1,2.1-1.443-.969a7.8,7.8,0,0,1-2.334.979l-.336,1.691h-2.96l-.337-1.691a7.8,7.8,0,0,1-2.333-.979L6.4,21.549l-2.1-2.1.969-1.444a7.8,7.8,0,0,1-.974-2.33l-1.7-.34V13.852"
+                  fill="none" stroke="#861" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          </g>
+        </svg>
+      </app-textify-icon>
+
+      <app-textify-icon>
+        <p text>راهنمای سایت</p>
+        <svg icon xmlns="http://www.w3.org/2000/svg" width="21.5" height="21.5" viewBox="0 0 21.5 21.5">
+          <g id="solar--help-line-duotone" transform="translate(-1.25 -1.25)">
+            <circle id="Ellipse_12" data-name="Ellipse 12" cx="10" cy="10" r="10" transform="translate(2 2)" fill="none"
+                    stroke="#861" stroke-width="1.5"/>
+            <circle id="Ellipse_13" data-name="Ellipse 13" cx="4" cy="4" r="4" transform="translate(8 8)" fill="none"
+                    stroke="#861" stroke-width="1.5"/>
+            <path id="Path_21" data-name="Path 21" d="M15,9l4-4M5,19l4-4M9,9,5,5M19,19l-4-4" fill="none" stroke="#861"
+                  stroke-width="1.5" opacity="0.5"/>
+          </g>
+        </svg>
+      </app-textify-icon>
+
+      <app-textify-icon>
+        <p text>تماس با ما</p>
+        <svg icon xmlns="http://www.w3.org/2000/svg" width="19.322" height="19.322" viewBox="0 0 19.322 19.322">
+          <path id="line-md--phone-twotone"
+                d="M8,3c.5,0,2.5,4.5,2.5,5,0,1-1.5,2-2,3S9,13,10,14c.39.39,2,2,3,1.5s2-2,3-2c.5,0,5,2,5,2.5a4.355,4.355,0,0,1-3,4,6.893,6.893,0,0,1-4.5,0,10.926,10.926,0,0,1-6-3.5,10.926,10.926,0,0,1-3.5-6A6.893,6.893,0,0,1,4,6,4.355,4.355,0,0,1,8,3Z"
+                transform="translate(-2.678 -2)" fill="rgba(0,0,0,0)" stroke="#861" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2" stroke-dasharray="62"/>
+        </svg>
+      </app-textify-icon>
+    </div>
+  </div>
+</div>
+
+

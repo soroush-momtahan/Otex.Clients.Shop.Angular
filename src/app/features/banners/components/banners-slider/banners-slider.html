@@ -1,0 +1,30 @@
+<!-- تغییر ۱: overflow-hidden را از اینجا برداشتم تا اگر نقطه ها پایین رفتند، قیچی نشوند -->
+<div class="w-full relative">
+
+  <!-- تغییر ۲: اضافه کردن صریح pagination="true" در اینجا به شدت الزامی است -->
+  <swiper-container #swiperRef init="false" class="w-full block">
+
+    @for (banner of banners(); track banner.id) {
+      <swiper-slide Class="w-full">
+        <!-- برای اینکه سایه ها روی هم نیفتند، به این باکس کمی حاشیه امن دادیم -->
+        <div class="w-[98%] h-[95%] mx-auto border-2 border-porcelain-100 rounded-xl overflow-hidden shadow-xl relative block cursor-pointer group">
+
+          <img [src]="banner.image" [alt]="banner.title"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
+          <!-- نکته: pointer-events-none روی عکس باعث میشه گرفتن و کشیدن (Swipe) روی عکس خیلی روان تر کار کنه -->
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+
+          <div class="absolute bottom-6 start-6 z-10">
+            <h3 class="text-white font-heavy text-lg md:text-2xl drop-shadow-md">
+              {{ banner.title }}
+            </h3>
+          </div>
+
+        </div>
+      </swiper-slide>
+    }
+
+  </swiper-container>
+
+</div>

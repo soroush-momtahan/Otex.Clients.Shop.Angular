@@ -1,0 +1,29 @@
+/* دسترسی به تنظیمات CSS Variable های Swiper */
+swiper-container {
+  /* رنگ نقطه ها (کد رنگی طلایی شما) */
+  --swiper-pagination-color: #FDC403;
+  --swiper-pagination-bullet-inactive-color: #A0A0A0;
+  --swiper-pagination-bullet-inactive-opacity: 0.6;
+
+  /* فاصله از پایین */
+  --swiper-pagination-bottom: -20px;
+}
+
+/* فاصله دادن به خود اسلایدها از پایین تا نقطه ها روی عکس نیفتند */
+swiper-container::part(container) {
+  padding-bottom: 35px !important;
+}
+
+/* این کد باعث می‌شود تا قبل از لود شدن Swiper،
+عکس‌ها زیر هم نیفتند و در یک خط کنار هم قرار بگیرند.
+به محض اجرا شدن JS، خود Swiper کنترل را به دست می‌گیرد. */
+swiper-container[init="false"] {
+  display: flex;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+swiper-container[init="false"] swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+}

@@ -1,0 +1,32 @@
+<!-- اضافه شدن group و cursor-pointer برای تعامل کاربر -->
+<div class="flex flex-col md:flex-row items-center gap-2 sm:gap-3 group cursor-pointer w-full">
+
+  <!--
+    تغییرات ظرف آیکون:
+    1. استفاده از rounded-2xl (مربع با گوشه های خیلی گرد مثل اپل) به جای دایره کامل
+    2. افکت های هاور: بالا رفتن (-translate-y-1.5) و تغییر سایه و رنگ حاشیه
+  -->
+  <div class="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14
+              bg-gradient-to-b from-white to-porcelain-50
+              border border-porcelain-200 rounded-2xl
+              shadow-[0_4px_10px_rgba(0,0,0,0.03)]
+              transition-all duration-300 ease-out
+              group-hover:-translate-y-1.5 group-hover:shadow-[0_10px_20px_rgba(136,102,17,0.15)]
+              group-hover:border-porcelain-400">
+
+    <!-- ظرف داخلی برای انیمیشن خود SVG -->
+    <div class="transition-transform duration-300 ease-out group-hover:scale-110 flex items-center justify-center">
+      <ng-content select="[icon]"/>
+    </div>
+
+  </div>
+
+  <!--
+    متن:
+    تغییر رنگ در زمان هاور برای جلب توجه بیشتر
+  -->
+  <div class="text-[11px] sm:text-xs font-bold text-porcelain-700 group-hover:text-porcelain-700 transition-colors duration-300 text-center whitespace-nowrap">
+    <ng-content select="[text]"/>
+  </div>
+
+</div>

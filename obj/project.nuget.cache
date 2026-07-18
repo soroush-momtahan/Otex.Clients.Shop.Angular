@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "2mSfowwVA2A=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Soroush\\Documents\\Code\\01 - projects\\otex\\src\\Clients\\Shop\\Otex.Clients.Shop.Angular\\Otex.Clients.Shop.Angular.esproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1012",
+      "level": "Error",
+      "message": "Platform version is not present for one or more target frameworks, even though they have specified a platform: net6.0-none",
+      "projectPath": "C:\\Users\\Soroush\\Documents\\Code\\01 - projects\\otex\\src\\Clients\\Shop\\Otex.Clients.Shop.Angular\\Otex.Clients.Shop.Angular.esproj",
+      "filePath": "C:\\Users\\Soroush\\Documents\\Code\\01 - projects\\otex\\src\\Clients\\Shop\\Otex.Clients.Shop.Angular\\Otex.Clients.Shop.Angular.esproj",
+      "targetGraphs": []
+    }
+  ]
+}

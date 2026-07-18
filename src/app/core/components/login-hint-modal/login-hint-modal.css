@@ -1,0 +1,72 @@
+/* تنظیم سرعت انیمیشن ها (هرچه زمان بیشتر باشد، حرکت نرم تر و کندتر است) */
+.animate-scroll-up {
+  animation: scroll-up 25s linear infinite;
+}
+
+.animate-scroll-down {
+  animation: scroll-down 25s linear infinite;
+}
+
+/* در زمان هاور کردن، انیمیشن متوقف شود (اختیاری ولی برای UX عالی است) */
+.animate-scroll-up:hover,
+.animate-scroll-down:hover {
+  animation-play-state: paused;
+}
+
+/* فریم های انیمیشن بالا رونده */
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    /* چون آرایه را ۲ بار تکرار کردیم، ۵۰ درصد یعنی دقیقا انتهای لیست اول */
+    transform: translateY(-50%);
+  }
+}
+
+/* فریم های انیمیشن پایین رونده */
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*------------------------*/
+
+/* انیمیشن محو شدن پس زمینه مات (Backdrop) */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* انیمیشن سُر خوردن از پایین (مخصوص موبایل) */
+@keyframes slide-up-mobile {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* انیمیشن بزرگ شدن فنری (مخصوص دسکتاپ) */
+@keyframes spring-scale-desktop {
+  0% { transform: scale(0.9) translateY(20px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* اختصاص انیمیشن ها به کلاس ها */
+.animate-backdrop {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-modal-mobile {
+  /* در موبایل از پایین میاد */
+  animation: slide-up-mobile 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (min-width: 768px) {
+  .animate-modal-mobile {
+    /* در دسکتاپ به صورت فنری ظاهر میشه */
+    animation: spring-scale-desktop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}

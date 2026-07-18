@@ -1,0 +1,17 @@
+<div class="relative">
+  <div class="grid gap-2 container mx-auto">
+    <!--header-text-->
+    <app-hero-header/>
+    <app-banners-slider class="container mx-auto mt-5"/>
+    <app-icon-panel/>
+    <div class="grid md:grid-cols-3 gap-x-6">
+      <app-search-bar class="mt-8 mb-2" [(inputValue)]="searchBarValue"/>
+    </div>
+    <!--products-->
+    <div class="relative">
+      <!--      <div class="invisible lg:visible absolute inset-0 z-[-1] opacity-30 mix-blend-multiply bg-[url('/images/backdrop-01.jpeg')] bg-repeat bg-[length:1376px_768px]"></div>-->
+      <app-product-list [searchQuery]="searchBarValue()"/>
+    </div>
+  </div>
+</div>
+
