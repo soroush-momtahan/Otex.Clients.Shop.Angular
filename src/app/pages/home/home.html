@@ -1,11 +1,12 @@
-<div class="relative w-full">
+<app-hero-section class="z-50"/>
+<div class="relative w-full pt-24">
   <div class="grid gap-2 container mx-auto w-full">
     <!--header-text-->
-    <app-hero-header/>
+<!--    <app-hero-header/>-->
     <app-banners-slider class="container mx-auto mt-5"/>
     <app-icon-panel/>
-    <div class="grid md:grid-cols-3 gap-x-6">
-      <app-search-bar class="mt-8 mb-2" [(inputValue)]="searchBarValue"/>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6">
+      <app-search-bar class="mt-8 mb-2 mx-auto w-[95%]" [(inputValue)]="searchBarValue"/>
     </div>
     <!--products-->
     <div class="relative">

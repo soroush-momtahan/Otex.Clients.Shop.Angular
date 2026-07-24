@@ -26,6 +26,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
       @for (product of viewModel().products; track product.id) {
         <app-product-card
+          class="mx-auto w-[95%]"
           [productData]="product"
           [isCompact]="false"
         />

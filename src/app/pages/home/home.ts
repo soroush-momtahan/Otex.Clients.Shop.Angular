@@ -4,6 +4,7 @@ import {IconPanel} from './components/icon-panel/icon-panel';
 import {HeroHeader} from './components/hero-header/hero-header';
 import {BannersSlider} from '../../features/banners/components/banners-slider/banners-slider';
 import {SearchBar} from './components/search-bar/search-bar';
+import {HeroSection} from './components/hero-section/hero-section';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,8 @@ import {SearchBar} from './components/search-bar/search-bar';
     IconPanel,
     HeroHeader,
     BannersSlider,
-    SearchBar
+    SearchBar,
+    HeroSection,
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',
