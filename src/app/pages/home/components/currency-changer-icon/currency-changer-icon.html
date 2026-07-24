@@ -4,14 +4,14 @@
   [class.animate-flip-out]="isAnimating"
 >
   <!-- Container با perspective برای افکت 3D -->
-  <div class="relative size-8 md:w-20 md:h-20" [class.animate-flip-in]="!isAnimating">
+  <div class="relative size-10" [class.animate-flip-in]="!isAnimating">
 
     <!-- حالت TOMAN -->
     @if (viewModel() === 'TOMAN') {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 32 32"
-        class="w-full h-full text-porcelain-800 transition-all duration-500 group-hover:text-blue-600"
+        class="relative top-[5px] w-full h-full text-porcelain-700 transition-all duration-500 group-hover:text-blue-600"
       >
         <!-- حلقه بیرونی با انیمیشن pulse -->
         <circle
@@ -20,7 +20,7 @@
           r="12"
           fill="currentColor"
           opacity="0.2"
-          class="animate-pulse-glow"
+          class="relative animate-pulse-glow"
         />
 
         <!-- حلقه اصلی -->
@@ -42,7 +42,7 @@
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 32 32"
-        class="w-full h-full text-porcelain-800 transition-all duration-500 group-hover:text-emerald-600"
+        class="relative top-[5px] w-full h-full text-porcelain-700 transition-all duration-500 group-hover:text-emerald-600"
       >
         <circle
           cx="16"

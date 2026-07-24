@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+
 
 @import 'tailwindcss';
 
@@ -34,7 +34,6 @@ button div {
   --color-porcelain-800: #5b440b;
   --color-porcelain-900: #2d2206;
   --color-porcelain-950: #201804;
-  --text-otex-dark: #0a1024;
 
   --text-2xs: 10px;
   --text-2xs--line-height: 14px;
@@ -45,7 +44,7 @@ button div {
 
 @layer components {
   .form-input {
-    @apply w-full rounded-xl border border-porcelain-300 bg-white/60 p-4 text-otex-dark
+    @apply w-full rounded-xl border border-porcelain-300 bg-white/60 p-4
     focus:border-porcelain-500 focus:outline-none focus:ring-2 focus:ring-porcelain-500/20
     transition-all duration-300 placeholder-porcelain-600;
   }
