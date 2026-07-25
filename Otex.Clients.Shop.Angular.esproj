@@ -12,5 +12,6 @@
     <Folder Include="src\app\pages\" />
     <Folder Include="src\app\pages\cooperation\components\" />
     <Folder Include="src\app\pages\home\components\" />
+    <Folder Include="src\app\pages\products\components\" />
   </ItemGroup>
 </Project>
