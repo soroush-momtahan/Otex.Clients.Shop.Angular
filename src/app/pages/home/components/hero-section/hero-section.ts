@@ -3,7 +3,7 @@ import { NavBar } from '../../../../core/components/nav-bar/nav-bar';
 
 @Component({
   selector: 'app-hero-section',
-  imports: [NavBar],
+  imports: [],
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.css',
 })

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { HeroSection } from '../home/components/hero-section/hero-section';
+import {CooperationForm} from '../../features/cooperation/components/cooperation-form/cooperation-form';
 
 @Component({
   selector: 'app-test-page',
-  imports: [HeroSection],
+  imports: [
+    CooperationForm
+  ],
   templateUrl: './test-page.html',
   styleUrl: './test-page.css',
 })

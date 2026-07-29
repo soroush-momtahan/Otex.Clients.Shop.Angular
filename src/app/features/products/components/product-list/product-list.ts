@@ -7,6 +7,7 @@ import {
 import { ProductService } from '../../services/product.service';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { ProductCard } from '../product-card/product-card';
+import {log} from 'node:util';
 
 interface ProductListViewModel {
   isLoading: boolean;
@@ -43,6 +44,7 @@ export class ProductList {
 
     // حالا دیتای ما به طور قطع آرایه‌ای از ProductCardModel است (هیچ‌وقت undefined یا آبجکت خالی نیست)
     // const products = this.productsResource.value();
+    console.log(this.searchQuery());
     const products = getAdvancedFilteredProducts(getInitialProductCard(), this.searchQuery()).sort(
       (a, b) => a.order - b.order,
     );

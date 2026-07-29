@@ -1,0 +1,41 @@
+/* ایجاد پترن خطوط مورب هشدار */
+.hazard-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    #090702 4px,
+    #090702 8px
+  );
+  background-size: 200% 200%;
+}
+
+/* انیمیشن حرکت خطوط هشدار از بالا به پایین */
+@keyframes stripes-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.animate-stripes-move {
+  animation: stripes-move 4s linear infinite;
+}
+
+/* انیمیشن ورود نرم باکس به صفحه (Fade Slide Up) */
+@keyframes slide-up-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up-fade {
+  animation: slide-up-fade 0.8s ease-out forwards;
+}

@@ -6,6 +6,7 @@
     <PublishAssetsDirectory>$(MSBuildProjectDirectory)\dist\Otex.Clients.Shop.Angular\browser\</PublishAssetsDirectory>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="src\app\core\directives\" />
     <Folder Include="src\app\features\banners\components\" />
     <Folder Include="src\app\features\cooperation\components\" />
     <Folder Include="src\app\features\products\components\" />

@@ -1,14 +1,292 @@
-<div class="relative w-full pt-24">
-  <div class="grid gap-2 container mx-auto w-full">
-    <app-banners-slider class="container mx-auto mt-5"/>
-    <app-icon-panel/>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6">
-      <app-search-bar class="mt-8 mb-2 mx-auto w-[95%]" [(inputValue)]="searchBarValue"/>
+<!--<ng-template #customIcon>-->
+<!--  <svg class="size-10 md:size-15 text-porcelain-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--    <path d="M0 0h24v24H0z" fill="none" />-->
+<!--    <circle cx="17.5" cy="17.5" r="2.5" fill="currentColor" opacity=".3" />-->
+<!--    <path fill="currentColor" d="M5 15.5h4v4H5zm7-9.66L10.07 9h3.86z" opacity=".3" />-->
+<!--    <path fill="currentColor" d="m12 2l-5.5 9h11zm0 3.84L13.93 9h-3.87zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5s4.5-2.01 4.5-4.5s-2.01-4.5-4.5-4.5m0 7a2.5 2.5 0 0 1 0-5a2.5 2.5 0 0 1 0 5M11 13.5H3v8h8zm-2 6H5v-4h4z" />-->
+<!--  </svg>-->
+<!--</ng-template>-->
+<!--<ng-template #pageTitle>-->
+<!--  <div class="w-full font-bold items-center flex text-porcelain-700 text-xl gap-1">-->
+<!--    <span class="text-porcelain-600 font-black text-base">محصولات</span>-->
+<!--    <span class="font-marjor relative top-[-4px] text-porcelain-600">OTEX</span>-->
+<!--  </div>-->
+<!--</ng-template>-->
+
+<!--<ng-template #customActions>-->
+<!--  &lt;!&ndash;search-bar icon&ndash;&gt;-->
+<!--  <button (click)="openSearch()" class="px-2 py-2 text-porcelain-700 hover:cursor-pointer hover:text-porcelain-600 transition">-->
+<!--    <svg class=" relative top-[2px] size-8 md:size-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--      <path d="M0 0h24v24H0z" fill="none"/>-->
+<!--      <g fill="none">-->
+<!--        <path fill="currentColor" d="M19 11a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".16"/>-->
+<!--        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
+<!--              d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/>-->
+<!--      </g>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--</ng-template>-->
+
+<!--<div class="relative w-full pt-24 pb-24 bg-[#0c0902]">-->
+<!--  <div class="absolute min-h-screen inset-0 z-[-1] opacity-30 mix-blend-multiply bg-[url('/images/backdrop-01.jpeg')] bg-repeat bg-[length:1376px_768px]"></div>-->
+<!--  <div class="grid gap-2 container mx-auto w-full">-->
+<!--    <app-banners-slider class="container mx-auto mt-5"/>-->
+<!--&lt;!&ndash;    <app-icon-panel/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6">&ndash;&gt;-->
+<!--&lt;!&ndash;      <app-search-bar class="mt-8 mb-2 mx-auto w-[95%]" [(inputValue)]="searchBarValue"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--    &lt;!&ndash;products&ndash;&gt;-->
+<!--    <div class="relative">-->
+<!--      &lt;!&ndash;      <div class="invisible lg:visible absolute inset-0 z-[-1] opacity-30 mix-blend-multiply bg-[url('/images/backdrop-01.jpeg')] bg-repeat bg-[length:1376px_768px]"></div>&ndash;&gt;-->
+<!--      <app-product-list [searchQuery]="searchBarValue()"/>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!-- ========================================== -->
+<!-- بخش ۱: قالب‌های تزریقی برای Top Nav Bar -->
+<!-- ========================================== -->
+
+<!--&lt;!&ndash; آیکون اختصاصی صفحه (رنگ طلایی/درخشان) &ndash;&gt;-->
+<!--<ng-template #customIcon>-->
+<!--  <div class="relative group">-->
+<!--    &lt;!&ndash; افکت نور پشت آیکون &ndash;&gt;-->
+<!--    <div class="absolute inset-0 bg-porcelain-400/20 blur-md rounded-full scale-0 group-hover:scale-110 transition-transform"></div>-->
+<!--    <svg class="relative z-10 size-9 md:size-11 text-porcelain-400 drop-shadow-[0_0_8px_rgba(233,187,73,0.3)] transition-transform duration-300 hover:scale-105" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--      <path d="M0 0h24v24H0z" fill="none" />-->
+<!--      <circle cx="17.5" cy="17.5" r="2.5" fill="currentColor" opacity=".2" />-->
+<!--      <path fill="currentColor" d="M5 15.5h4v4H5zm7-9.66L10.07 9h3.86z" opacity=".2" />-->
+<!--      <path fill="currentColor" d="m12 2l-5.5 9h11zm0 3.84L13.93 9h-3.87zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5s4.5-2.01 4.5-4.5s-2.01-4.5-4.5-4.5m0 7a2.5 2.5 0 0 1 0-5a2.5 2.5 0 0 1 0 5M11 13.5H3v8h8zm-2 6H5v-4h4z" />-->
+<!--    </svg>-->
+<!--  </div>-->
+<!--</ng-template>-->
+
+<!--&lt;!&ndash; عنوان صفحه (استایل متالیک و گرادیانت) &ndash;&gt;-->
+<!--<ng-template #pageTitle>-->
+<!--  <div class="w-full font-bold items-center flex text-xl md:text-2xl gap-1.5 tracking-tight animate-fade-in-fast">-->
+<!--    &lt;!&ndash; کلمه محصولات به رنگ روشن &ndash;&gt;-->
+<!--    <span class="text-porcelain-50 font-black text-base md:text-lg">محصولات</span>-->
+<!--    &lt;!&ndash; برند OTEX با گرادیانت طلایی &ndash;&gt;-->
+<!--    <span class="font-sans font-black relative top-[-2px] text-transparent bg-clip-text bg-gradient-to-r from-porcelain-300 to-porcelain-500 tracking-wider drop-shadow-sm">OTEX</span>-->
+<!--  </div>-->
+<!--</ng-template>-->
+
+<!--&lt;!&ndash; دکمه‌های اکشن (آیکون سرچ) &ndash;&gt;-->
+<!--<ng-template #customActions>-->
+<!--  <button (click)="openSearch()"-->
+<!--          class="p-2.5 text-porcelain-200 hover:text-porcelain-400 bg-white/0 hover:bg-white/5 rounded-full transition-all duration-300 hover:scale-110">-->
+<!--    <svg class="size-6 md:size-7 drop-shadow-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--      <path d="M0 0h24v24H0z" fill="none"/>-->
+<!--      <g fill="none">-->
+<!--        <path fill="currentColor" d="M19 11a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".1"/>-->
+<!--        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"-->
+<!--              d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/>-->
+<!--      </g>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--</ng-template>-->
+
+<!--&lt;!&ndash; ========================================== &ndash;&gt;-->
+<!--&lt;!&ndash; بخش ۲: کانتینر اصلی صفحه (پس‌زمینه صنعتی) &ndash;&gt;-->
+<!--&lt;!&ndash; ========================================== &ndash;&gt;-->
+
+<!--<div class="relative w-full min-h-screen pt-28 pb-32 bg-[#0c0902] overflow-x-hidden">-->
+
+<!--  &lt;!&ndash; لایه 1: پترن نویز/کربن پس‌زمینه &ndash;&gt;-->
+<!--  &lt;!&ndash; از mix-blend-luminosity استفاده شده تا بافت عکس روی رنگ مشکی به خوبی بنشیند و opacity کم شده تا چشم را نزند &ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="absolute inset-0 z-0 opacity-10 mix-blend-luminosity bg-[url('/images/backdrop-01.jpeg')] bg-repeat bg-[length:400px_400px] pointer-events-none"></div>&ndash;&gt;-->
+
+<!--  &lt;!&ndash; لایه 2: نورپردازی استودیویی (Cinematic Glows) &ndash;&gt;-->
+<!--  &lt;!&ndash; هاله طلایی در بالا راست &ndash;&gt;-->
+<!--  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-porcelain-500/5 blur-[120px] rounded-full pointer-events-none z-0"></div>-->
+<!--  &lt;!&ndash; هاله آبی/فیروزه‌ای تیره (Teal) در پایین چپ برای ایجاد کنتراست رنگی با جعبه لنت‌ها &ndash;&gt;-->
+<!--  <div class="absolute bottom-20 left-0 w-[600px] h-[600px] bg-blue-900/5 blur-[150px] rounded-full pointer-events-none z-0"></div>-->
+
+<!--  &lt;!&ndash; محتوای اصلی &ndash;&gt;-->
+<!--  <div class="relative z-10 grid gap-6 container mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl">-->
+
+<!--    &lt;!&ndash; اسلایدر بنرها &ndash;&gt;-->
+<!--    &lt;!&ndash; در طراحی پریمیوم، بهتر است اسلایدر یک افکت سایه دار داشته باشد &ndash;&gt;-->
+<!--    <app-banners-slider class="w-full mt-2 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/5"/>-->
+
+<!--    &lt;!&ndash; در صورت نیاز به سرچ بار داخل صفحه در آینده &ndash;&gt;-->
+<!--    &lt;!&ndash; <app-search-bar class="mt-4 mb-2 mx-auto w-full max-w-md"/> &ndash;&gt;-->
+
+<!--    &lt;!&ndash; لیست محصولات &ndash;&gt;-->
+<!--    <div class="relative mt-4">-->
+<!--      <app-product-list [searchQuery]="searchBarValue()"/>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</div>-->
+
+<!-- ========================================== -->
+<!-- بخش ۱: قالب‌های تزریقی برای Top Nav Bar -->
+<!-- ========================================== -->
+
+<!-- آیکون اختصاصی صفحه (رنگ طلایی/درخشان) -->
+<ng-template #customIcon>
+  <div class="relative group cursor-pointer">
+    <!-- افکت نور پشت آیکون (Glow Effect) -->
+    <div class="absolute inset-0 bg-porcelain-400/30 blur-xl rounded-full scale-50 group-hover:scale-125 transition-transform duration-500"></div>
+    <svg class="relative z-10 size-9 md:size-11 text-porcelain-400 drop-shadow-[0_0_10px_rgba(227,171,28,0.4)] transition-transform duration-500 hover:scale-105" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M0 0h24v24H0z" fill="none" />
+      <!-- با استفاده از text-porcelain-200/20 برای بخش های محو آیکون عمق ایجاد میکنیم -->
+      <circle cx="17.5" cy="17.5" r="2.5" fill="currentColor" opacity=".25" />
+      <path fill="currentColor" d="M5 15.5h4v4H5zm7-9.66L10.07 9h3.86z" opacity=".25" />
+      <path fill="currentColor" d="m12 2l-5.5 9h11zm0 3.84L13.93 9h-3.87zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5s4.5-2.01 4.5-4.5s-2.01-4.5-4.5-4.5m0 7a2.5 2.5 0 0 1 0-5a2.5 2.5 0 0 1 0 5M11 13.5H3v8h8zm-2 6H5v-4h4z" />
+    </svg>
+  </div>
+</ng-template>
+
+<!-- عنوان صفحه (استایل متالیک و گرادیانت) -->
+<ng-template #pageTitle>
+  <div class="w-full font-bold items-center flex text-xl md:text-2xl gap-2 tracking-tight animate-fade-in-fast select-none">
+    <span class="text-porcelain-50 font-black text-base md:text-xl drop-shadow-md">محصولات</span>
+    <!-- برند OTEX با گرادیانت طلایی متالیک -->
+    <span class="font-marjor font-black relative top-[-2px] text-transparent bg-clip-text bg-gradient-to-r from-porcelain-200 via-porcelain-400 to-porcelain-600 tracking-widest drop-shadow-[0_2px_10px_rgba(227,171,28,0.2)]">OTEX</span>
+  </div>
+</ng-template>
+
+<!-- دکمه‌های اکشن (آیکون سرچ) -->
+<ng-template #customActions>
+  <button (click)="openSearch()"
+          class="p-2.5 text-porcelain-200 hover:text-white bg-white/0 hover:bg-white/10 border border-transparent hover:border-white/5 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm">
+    <svg class="size-6 md:size-7 drop-shadow-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <g fill="none">
+        <path fill="currentColor" d="M19 11a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".15"/>
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+              d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/>
+      </g>
+    </svg>
+  </button>
+</ng-template>
+
+
+<!-- ========================================== -->
+<!-- بخش ۲: کانتینر اصلی صفحه (پس‌زمینه صنعتی) -->
+<!-- ========================================== -->
+
+<!--&lt;!&ndash; استفاده از selection برای تغییر رنگ متن در صورت انتخاب توسط کاربر &ndash;&gt;-->
+<!--<div class="relative w-full min-h-screen pt-28 pb-32 bg-[#0c0902] overflow-x-hidden font-sans selection:bg-porcelain-500/30 selection:text-porcelain-100" dir="rtl">-->
+
+<!--  &lt;!&ndash; لایه 1: پترن نویز سینمایی (تولید شده با SVG خالص بدون نیاز به فایل عکس) &ndash;&gt;-->
+<!--  &lt;!&ndash; این لایه حس فلز مات یا آسفالت خیس را به پس زمینه می‌دهد &ndash;&gt;-->
+<!--  <div class="absolute inset-0 z-0 opacity-[0.05] pointer-events-none mix-blend-screen"-->
+<!--       style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E&quot;);">-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; لایه 2: نورپردازی استودیویی (Cinematic Glows) &ndash;&gt;-->
+<!--  &lt;!&ndash; هاله طلایی در بالا راست (رنگ گرم) &ndash;&gt;-->
+<!--  <div class="absolute top-[-5%] right-[-10%] w-[70vw] h-[70vw] max-w-[600px] max-h-[600px] bg-porcelain-500/10 blur-[120px] md:blur-[150px] rounded-full pointer-events-none z-0 mix-blend-screen"></div>-->
+
+<!--  &lt;!&ndash; هاله آبی/فیروزه‌ای تیره در پایین چپ (رنگ سرد) - ایجاد تضاد رنگی هالیوودی (Teal & Orange) &ndash;&gt;-->
+<!--  <div class="absolute bottom-[5%] left-[-10%] w-[80vw] h-[80vw] max-w-[700px] max-h-[700px] bg-sky-900/15 blur-[120px] md:blur-[160px] rounded-full pointer-events-none z-0 mix-blend-screen"></div>-->
+
+<!--  &lt;!&ndash; محتوای اصلی &ndash;&gt;-->
+<!--  <div class="relative z-10 grid gap-8 container mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl">-->
+
+<!--    &lt;!&ndash; اسلایدر بنرها &ndash;&gt;-->
+<!--    &lt;!&ndash; در طراحی پریمیوم، بنرها تخت نیستند، درون یک قاب شیشه ای تیره قرار دارند &ndash;&gt;-->
+<!--    <div class="relative w-full mt-2 rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.8)] border border-porcelain-500/10 group">-->
+
+<!--      <app-banners-slider class="w-full h-full block transition-transform duration-700 group-hover:scale-[1.02]"/>-->
+
+<!--      &lt;!&ndash; افکت براق بودن (Glossy Overlay) ظریف روی بنر &ndash;&gt;-->
+<!--      <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none z-10"></div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; در صورت نیاز به سرچ بار داخل صفحه در آینده &ndash;&gt;-->
+<!--    &lt;!&ndash; <app-search-bar class="mt-4 mb-2 mx-auto w-full max-w-md drop-shadow-xl"/> &ndash;&gt;-->
+
+<!--    &lt;!&ndash; لیست محصولات &ndash;&gt;-->
+<!--    <div class="relative mt-2">-->
+<!--      &lt;!&ndash; یک متن ملایم بالای لیست برای حس حرفه ای تر (اختیاری) &ndash;&gt;-->
+<!--      <div class="flex flex-col items-center justify-center my-10 md:my-20 px-2 gap-2 md:gap-5">-->
+<!--        <h3 class="text-porcelain-100 font-bold text-lg md:text-4xl drop-shadow-md">محصولات برند <span class="text-porcelain-400">اُتکس</span></h3>-->
+<!--        <span class="text-zinc-500 text-sm font-medium">با اُتکس حسی متفاوت از کیفیت را تجربه کنید</span>-->
+<!--      </div>-->
+
+<!--      <app-product-list [searchQuery]="searchBarValue()"/>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</div>-->
+
+<!-- پس‌زمینه به شدت تاریک (Dark Matter) با انتخاب متن سفارشی -->
+<div class="relative w-full min-h-screen pt-28 pb-32 bg-[#090702] overflow-x-hidden font-sans selection:bg-porcelain-500/30 selection:text-porcelain-100" dir="rtl">
+
+  <!-- =============================== -->
+  <!-- لایه 1: بافت صنعتی و سینمایی -->
+  <!-- =============================== -->
+  <!-- نویز بسیار ظریف (کاهش opacity برای جلوگیری از کثیف دیده شدن تصویر) -->
+  <div class="absolute inset-0 z-0 opacity-[0.02] pointer-events-none mix-blend-overlay"
+       style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E&quot;);">
+  </div>
+
+  <!-- افکت Vignette (تاریک کردن لبه‌های صفحه برای فوکوس روی محصولات) -->
+  <div class="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#050401_100%)] opacity-80"></div>
+
+  <!-- =============================== -->
+  <!-- لایه 2: نورپردازی استودیویی (زنده) -->
+  <!-- =============================== -->
+  <!-- هاله طلایی در بالا راست (دارای انیمیشن تنفس آرام) -->
+  <div class="absolute top-[-10%] right-[-10%] w-[70vw] h-[70vw] max-w-[600px] max-h-[600px] bg-porcelain-500/10 blur-[120px] md:blur-[150px] rounded-full pointer-events-none z-0 mix-blend-screen animate-[pulse_6s_ease-in-out_infinite]"></div>
+
+  <!-- هاله فیروزه‌ای تیره در پایین چپ (دارای انیمیشن تنفس متناوب با سرعت متفاوت) -->
+  <div class="absolute bottom-[10%] left-[-10%] w-[80vw] h-[80vw] max-w-[700px] max-h-[700px] bg-sky-900/10 blur-[130px] md:blur-[160px] rounded-full pointer-events-none z-0 mix-blend-screen animate-[pulse_8s_ease-in-out_infinite_alternate]"></div>
+
+  <!-- =============================== -->
+  <!-- محتوای اصلی صفحه -->
+  <!-- =============================== -->
+  <div class="relative z-10 flex flex-col gap-8 container mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl animate-fade-in">
+
+    <!-- بخش بنر (قاب شیشه‌ای لوکس) -->
+    <div class="relative w-full mt-2 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-porcelain-500/15 group">
+
+      <!-- اسلایدر اصلی (تغییر مقیاس در هاور به جای کل باکس، روی خود اسلایدر اعمال می‌شود تا Layout به هم نریزد) -->
+      <app-banners-slider class="w-full h-full block transform transition-transform duration-[1500ms] group-hover:scale-105"/>
+
+      <!-- افکت عبور نور از روی بنر (Shimmer) در حالت هاور -->
+      <div class="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-25deg] transition-all duration-1000 ease-in-out group-hover:left-[200%] pointer-events-none z-10"></div>
+
+      <!-- سایه داخلی برای عمق دادن به بنر -->
+      <div class="absolute inset-0 shadow-[inset_0_0_30px_rgba(0,0,0,0.5)] pointer-events-none z-10"></div>
     </div>
-    <!--products-->
+
+    <app-product-duty-icons class="mt-2"/>
+
+    <app-warning class="mt-10"/>
+
+    <!-- بخش لیست محصولات -->
     <div class="relative">
-      <!--      <div class="invisible lg:visible absolute inset-0 z-[-1] opacity-30 mix-blend-multiply bg-[url('/images/backdrop-01.jpeg')] bg-repeat bg-[length:1376px_768px]"></div>-->
-      <app-product-list [searchQuery]="searchBarValue()"/>
+
+      <!-- تایپوگرافی سینمایی کاتالوگ محصول -->
+      <div class="flex flex-col items-center justify-center my-10 md:my-16 px-2 gap-3 z-20 relative">
+
+        <!-- خط نوری داشبوردی بالای تیتر -->
+        <div class="w-16 h-1 bg-gradient-to-r from-transparent via-porcelain-500 to-transparent rounded-full opacity-60"></div>
+
+        <h3 class="text-porcelain-50 font-black text-2xl md:text-5xl tracking-tight drop-shadow-[0_0_15px_rgba(233,187,73,0.15)] text-center">
+          کالکشن <span class="font-marjor text-transparent bg-clip-text bg-gradient-to-l from-porcelain-300 to-porcelain-500 tracking-wider">OTEX</span>
+        </h3>
+
+        <p class="text-zinc-500 text-sm md:text-base font-medium tracking-wide mt-1 text-center max-w-md">
+          نهایتِ قدرت ترمزگیری، بدونِ کوچکترین صدا. طراحی شده برای رانندگی حرفه‌ای.
+        </p>
+      </div>
+
+      <!-- لیست محصولات -->
+      <!-- قرار دادن در یک div با z-index بالا برای اطمینان از قرار گرفتن روی هاله‌های نوری -->
+      <div class="relative z-20">
+        <app-product-list [searchQuery]="navbarService.searchBarQuery()"/>
+      </div>
+
     </div>
+
   </div>
 </div>
+
+<app-faq/>
+<app-connect-hub/>

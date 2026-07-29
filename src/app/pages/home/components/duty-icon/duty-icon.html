@@ -1,0 +1,46 @@
+<section class="mx-auto">
+  <!-- گرید رسپانسیو: در موبایل 1 ستون، تبلت 2 ستون، دسکتاپ 4 ستون -->
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+    @for (model of models; track model.id) {
+      <!-- کانتینر اصلی کارت -->
+      <div class="relative overflow-hidden rounded-3xl h-56 group cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-porcelain-200/20">
+
+        <!-- تصویر پس‌زمینه با افکت زوم هنگام هاور -->
+        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+             [style.backgroundImage]="'url(' + model.bgImage + ')'">
+        </div>
+
+        <!-- لایه شیشه‌ای و گرادیان روی تصویر (Overlay) -->
+        <!-- گرادیان از پایین (تیره) به بالا (روشن‌تر/شفاف‌تر) تا نوشته‌ها خوانا باشند -->
+        <div class="absolute inset-0 bg-gradient-to-t from-porcelain-950/95 via-porcelain-900/70 to-porcelain-500/30 backdrop-blur-[1.5px] mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+
+        <!-- محتوای داخل کارت -->
+        <div class="relative h-full p-6 flex flex-col justify-between z-10 w-full">
+
+          <!-- بخش بالا: آیکون -->
+          <div class="flex justify-start">
+            <!-- استایل دقیقاً مشابه نمونه: یک باکس مربعی با گوشه‌های گرد و رنگ سالید + افکت شیشه‌ای نرم -->
+            <div class="bg-porcelain-500/90 backdrop-blur-md shadow-inner border border-white/30 rounded-2xl w-14 h-14 flex items-center justify-center text-white transition-colors duration-300 group-hover:bg-porcelain-400">
+              <span [innerHTML]="model.svgIcon" class="flex items-center justify-center"></span>
+            </div>
+          </div>
+
+          <!-- بخش پایین: متن و عنوان -->
+          <div class="text-right mt-auto">
+            <h3 class="text-2xl font-extrabold text-white mb-2 drop-shadow-md">
+              {{ model.title }}
+            </h3>
+            <p class="text-porcelain-100/90 text-sm font-medium leading-relaxed">
+              {{ model.subtitle }}
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    }
+
+  </div>
+</section>

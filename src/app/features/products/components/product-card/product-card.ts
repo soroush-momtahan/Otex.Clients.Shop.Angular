@@ -1,4 +1,4 @@
-import {Component, computed, inject, input} from '@angular/core';
+import {Component, computed, inject, input, signal} from '@angular/core';
 import {ProductCardModel} from '../../models/product-card.model';
 import {getInStockStatusConfig, InStockStatusConfig} from './style-configs/in-stock-status.config';
 import {PRICE_TYPE_MAP, PriceTypeConfig} from './style-configs/price-type.config';
@@ -15,6 +15,7 @@ interface ProductCardViewModel {
   formatedPayablePrice: string,
   formatedOriginalPrice: string,
   hasDiscount: boolean;
+  isExpanded: boolean,
 }
 
 @Component({
@@ -32,9 +33,11 @@ export class ProductCard {
   activeCurrencyService = inject(CurrencyService);
   productData = input.required<ProductCardModel>();
   isCompact = input(true);
+  isExpanded = signal(false);
   viewModel = computed<ProductCardViewModel>(() => {
     const isCompact = this.isCompact()
     const product = this.productData();
+    const isExpanded = this.isExpanded();
     const formatedPayablePrice = this.activeCurrencyService.activeCurrency() === 'TOMAN' ?
       (Number(product.payablePrice)/10).toLocaleString("en-US") :
       Number(product.payablePrice).toLocaleString("en-US");
@@ -57,6 +60,10 @@ export class ProductCard {
       formatedPayablePrice,
       formatedOriginalPrice,
       hasDiscount,
+      isExpanded
     }
   });
+  toggleExpand() {
+    this.isExpanded.update(isExpanded => !isExpanded);
+  }
 }

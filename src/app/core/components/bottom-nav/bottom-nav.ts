@@ -1,11 +1,12 @@
 import {Component, inject, model, signal} from '@angular/core';
 import { LoginHintModalService } from '../../services/login-hint-modal/login-hint-modal.service';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-bottom-nav',
-  imports: [],
+  imports: [
+  ],
   templateUrl: './bottom-nav.html',
   styleUrl: './bottom-nav.css',
 })

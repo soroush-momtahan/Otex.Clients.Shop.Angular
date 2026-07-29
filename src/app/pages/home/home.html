@@ -1,7 +1,52 @@
-<app-hero-section class="z-50"/>
-<div class="relative w-full pt-24">
-  <div class="grid gap-2 container mx-auto w-full">
+<div class="pb-24 bg-porcelain-950">
+  <!--  <app-hero-section class="z-50"/>-->
+  <app-hero/>
+  <div class="relative w-full">
 
+  </div>
+  <app-feature-scroll-reveal/>
+  <div class="bg-[#090702] relative">
+    <!--divider-->
+    <div class="pb-20 md:pb-10">
+      <div
+        class="absolute top-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+        <span class="text-zinc-500 text-xs font-semibold tracking-widest uppercase">محصولات</span>
+        <div class="w-6 h-10 border-2 border-zinc-600 rounded-full flex justify-center p-1">
+          <div class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-[bounce_2s_infinite]"></div>
+        </div>
+      </div>
+    </div>
+    <app-fade-product-list/>
+  </div>
+
+  <div class="pt-40 relative">
+    <!--divider-->
+    <div
+      class="absolute top-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+      <span class="text-zinc-500 text-xs font-semibold tracking-widest uppercase">خدمات</span>
+      <div class="w-6 h-10 border-2 border-zinc-600 rounded-full flex justify-center p-1">
+        <div class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-[bounce_2s_infinite]"></div>
+      </div>
+    </div>
+    <!--text-of-services-->
+    <div class="flex flex-col justify-center items-center mb-16 md:mb-15">
+      <div class="flex flex-col items-center justify-center mb-10 md:mb-16 gap-3 z-20 relative">
+        <!--divider-->
+        <div class="w-12 h-1 bg-gradient-to-r from-transparent via-porcelain-500 to-transparent rounded-full opacity-60"></div>
+        <h2 class="text-porcelain-50 font-black text-3xl md:text-5xl tracking-tight drop-shadow-md">
+          خدمات پر کاربرد <span class="font-marjor text-transparent bg-clip-text bg-gradient-to-l from-porcelain-300 to-porcelain-500 tracking-wider">OTEX</span>
+        </h2>
+        <p class="text-zinc-500 text-sm md:text-base font-medium md:hidden">کافیست روی خدمت مورد نظر خود لمس کنید</p>
+        <p class="hidden text-zinc-500 text-sm md:text-base font-medium md:block">کافیست روی خدمت مورد نظر خود کلیک کنید</p>
+      </div>
+    </div>
+    <!--services-->
+    <div class="grid gap-2 container mx-auto w-full">
+      <app-duty-icon/>
+    </div>
   </div>
 </div>
 
+
+<app-faq/>
+<app-connect-hub/>

@@ -1,29 +1,71 @@
+<!--<div class="container mx-auto">-->
+<!--  @if (viewModel().isLoading) {-->
+<!--    <div class="flex justify-center items-center min-h-75">-->
+<!--      <p class="text-gray-500 font-semibold animate-pulse font-iran">در حال دریافت محصولات...</p>-->
+<!--    </div>-->
+<!--  }-->
+
+<!--  @else if (viewModel().hasError) {-->
+<!--    <div class="flex flex-col items-center justify-center min-h-75 gap-4">-->
+<!--      <p class="text-rose-600 font-bold font-iran">{{ viewModel().errorMessage }}</p>-->
+<!--      <button-->
+<!--        (click)="retryFetch()"-->
+<!--        class="px-4 py-2 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-700 transition-colors">-->
+<!--        تلاش مجدد-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  }-->
+
+<!--  @else if (viewModel().isEmpty) {-->
+<!--    <div class="flex justify-center items-center min-h-75 border border-dashed border-gray-300 rounded-xl">-->
+<!--      <p class="text-gray-500 font-semibold font-iran">محصولی برای نمایش یافت نشد.</p>-->
+<!--    </div>-->
+<!--  }-->
+
+<!--  @else {-->
+<!--    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">-->
+<!--      @for (product of viewModel().products; track product.id) {-->
+<!--        <app-product-card-->
+<!--          class="mx-auto w-[95%]"-->
+<!--          [productData]="product"-->
+<!--          [isCompact]="false"-->
+<!--        />-->
+<!--      }-->
+<!--    </div>-->
+<!--  }-->
+
+<!--</div>-->
+
 <div class="container mx-auto">
   @if (viewModel().isLoading) {
-    <div class="flex justify-center items-center min-h-75">
-      <p class="text-gray-500 font-semibold animate-pulse font-iran">در حال دریافت محصولات...</p>
+    <!-- حالت Loading لوکس -->
+    <div class="flex flex-col justify-center items-center min-h-[40vh] gap-4">
+      <div class="w-12 h-12 border-4 border-porcelain-500/20 border-t-porcelain-500 rounded-full animate-spin"></div>
+      <p class="text-porcelain-400 font-semibold animate-pulse tracking-wide">در حال بررسی موجودی انبار اُتکس...</p>
     </div>
   }
 
   @else if (viewModel().hasError) {
-    <div class="flex flex-col items-center justify-center min-h-75 gap-4">
-      <p class="text-rose-600 font-bold font-iran">{{ viewModel().errorMessage }}</p>
+    <div class="flex flex-col items-center justify-center min-h-[40vh] gap-5 bg-rose-950/10 border border-rose-900/30 rounded-3xl backdrop-blur-sm p-8">
+      <svg class="w-16 h-16 text-rose-600 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      <p class="text-rose-400 font-bold text-lg text-center">{{ viewModel().errorMessage }}</p>
       <button
         (click)="retryFetch()"
-        class="px-4 py-2 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-700 transition-colors">
+        class="px-6 py-2.5 bg-rose-600/20 border border-rose-500/50 text-rose-200 rounded-xl font-bold hover:bg-rose-600 hover:text-white transition-all shadow-[0_0_15px_rgba(225,29,72,0.1)]">
         تلاش مجدد
       </button>
     </div>
   }
 
   @else if (viewModel().isEmpty) {
-    <div class="flex justify-center items-center min-h-75 border border-dashed border-gray-300 rounded-xl">
-      <p class="text-gray-500 font-semibold font-iran">محصولی برای نمایش یافت نشد.</p>
+    <div class="flex flex-col justify-center items-center min-h-[40vh] border border-dashed border-porcelain-500/20 bg-[#1a1403]/30 rounded-3xl gap-4">
+      <svg class="w-16 h-16 text-porcelain-600 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+      <p class="text-porcelain-300 font-medium">محصولی با این مشخصات یافت نشد.</p>
     </div>
   }
 
   @else {
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-12 pb-10">
       @for (product of viewModel().products; track product.id) {
         <app-product-card
           class="mx-auto w-[95%]"
@@ -33,5 +75,4 @@
       }
     </div>
   }
-
 </div>

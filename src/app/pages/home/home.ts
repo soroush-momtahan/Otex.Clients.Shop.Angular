@@ -1,20 +1,20 @@
 import {Component, signal} from '@angular/core';
-import {ProductList} from '../../features/products/components/product-list/product-list';
-import {IconPanel} from './components/icon-panel/icon-panel';
-import {HeroHeader} from './components/hero-header/hero-header';
-import {BannersSlider} from '../../features/banners/components/banners-slider/banners-slider';
-import {SearchBar} from './components/search-bar/search-bar';
-import {HeroSection} from './components/hero-section/hero-section';
+import {DutyIcon} from './components/duty-icon/duty-icon';
+import {FeatureScrollReveal} from './components/feature-scroll-reveal/feature-scroll-reveal';
+import {Hero} from './components/hero/hero';
+import {FadeProductList} from '../../features/products/components/fade-product-list/fade-product-list';
+import {Faq} from '../../core/components/faq/faq';
+import {ConnectHub} from '../../core/components/connect-hub/connect-hub';
 
 @Component({
   selector: 'app-home',
   imports: [
-    ProductList,
-    IconPanel,
-    HeroHeader,
-    BannersSlider,
-    SearchBar,
-    HeroSection,
+    DutyIcon,
+    FeatureScrollReveal,
+    Hero,
+    FadeProductList,
+    Faq,
+    ConnectHub,
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',

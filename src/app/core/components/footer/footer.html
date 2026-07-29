@@ -1,0 +1,122 @@
+<!-- فوتر پریمیوم و صنعتی -->
+<!-- pt-16 برای دسکتاپ، اما pb-28 برای موبایل تا زیر Bottom Nav Bar نرود -->
+<footer class="relative w-full bg-[#0a0802] border-t border-porcelain-500/10 font-sans overflow-hidden pt-16 pb-28 md:pb-6" dir="rtl">
+
+  <!-- افکت نوری پس زمینه (Glow) که لوگو را در طرح حل می‌کند -->
+  <div class="absolute top-0 right-1/4 w-[400px] h-[400px] bg-yellow-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+  <div class="container mx-auto px-6 max-w-7xl relative z-10">
+
+    <!-- گرید اصلی فوتر -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-12 border-b border-porcelain-500/10 pb-12">
+
+      <!-- ========================================== -->
+      <!-- ستون اول: لوگو و داستان برند (نمایش در موبایل و دسکتاپ) -->
+      <!-- ========================================== -->
+      <div class="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-right space-y-6">
+
+        <!-- لوگوی Otex با انیمیشن درخشش و ترکیب با بک‌گراند -->
+        <div class="relative group cursor-default">
+          <!-- هاله نوری زیر لوگو -->
+          <div class="absolute inset-0 bg-yellow-500/20 blur-xl rounded-full group-hover:bg-yellow-500/30 transition-colors duration-700"></div>
+          <img src="images/otex-transparent.png" alt="Otex Brakes"
+               class="relative z-10 w-30 h-28 drop-shadow-[0_0_15px_rgba(234,179,8,0.2)]
+                      transition-transform duration-700 ease-out hover:rotate-12 hover:scale-105">
+        </div>
+
+        <!-- متن بیوگرافی (ساده، قوی و خوانا) -->
+        <div class="space-y-3">
+          <h3 class="text-xl font-black text-white tracking-wide">
+            لنت ترمز <span class="text-yellow-500">اُتکـس</span>
+          </h3>
+          <p class="text-porcelain-200/60 leading-relaxed text-sm md:text-base max-w-sm">
+            از سال ---، با هدف ارتقای امنیت جاده‌ها آغاز به کار کردیم.
+            تضمین کیفیت از روز اول دغدغه ما بوده است. بهره‌گیری از
+            <strong class="text-porcelain-300 font-bold">فرمولاسیون پیشرفته کره‌ای</strong>
+            و مهندسی دقیق، اُتکس را به نماد اطمینان در ترمزگیری تبدیل کرده است.
+          </p>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- ستون دوم و سوم: دسترسی سریع (مخفی در موبایل - نکته ۴) -->
+      <!-- ========================================== -->
+      <div class="hidden md:flex md:col-span-4 justify-around">
+
+        <!-- لیست لینک‌های ۱ -->
+        <div class="flex flex-col space-y-4">
+          <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+            <div class="w-1.5 h-1.5 bg-porcelain-500 rounded-full"></div>
+            دسترسی سریع
+          </h4>
+          <a href="#" class="text-porcelain-200/50 hover:text-porcelain-400 transition-colors text-sm">محصولات لنت دیسکی</a>
+          <a href="#" class="text-porcelain-200/50 hover:text-porcelain-400 transition-colors text-sm">محصولات لنت کفشکی</a>
+          <a href="#" class="text-porcelain-200/50 hover:text-porcelain-400 transition-colors text-sm">لیست قیمت همکار</a>
+          <a href="#" class="text-porcelain-200/50 hover:text-porcelain-400 transition-colors text-sm">پیگیری سفارشات</a>
+        </div>
+
+        <!-- لیست لینک‌های ۲ -->
+        <div class="flex flex-col space-y-4">
+          <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+            <div class="w-1.5 h-1.5 bg-porcelain-500 rounded-full"></div>
+            خدمات مشتریان
+          </h4>
+          <a href="#" class="text-porcelain-200/50 hover:text-porcelain-400 transition-colors text-sm">درباره اُتکس</a>
+          <a href="#" class="text-porcelain-200/50 hover:text-porcelain-400 transition-colors text-sm">شعب و نمایندگی‌ها</a>
+          <a href="#" class="text-porcelain-200/50 hover:text-porcelain-400 transition-colors text-sm">شرایط مرجوعی کالا</a>
+          <a href="#" class="text-porcelain-200/50 hover:text-porcelain-400 transition-colors text-sm">قوانین و مقررات</a>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- ستون چهارم: نمادهای اعتماد (نمایش در موبایل و دسکتاپ - نکته ۱) -->
+      <!-- ========================================== -->
+      <div class="md:col-span-3 flex flex-col items-center md:items-start space-y-4">
+        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+          <div class="w-1.5 h-1.5 bg-porcelain-500 rounded-full md:hidden"></div>
+          نمادهای اعتماد
+        </h4>
+
+        <!-- باکس شیشه‌ای برای نمادها -->
+        <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/5 rounded-2xl backdrop-blur-sm">
+
+          <!-- نماد اینماد (Grayscale Trick) -->
+          <a href="#" class="relative w-16 h-16 bg-white rounded-xl flex items-center justify-center overflow-hidden
+                             opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 shadow-md">
+            <!-- تصویر فرضی اینماد -->
+            <img src="" alt="اینماد" class="w-full h-full object-contain p-1">
+          </a>
+
+          <!-- نماد زرین پال (Grayscale Trick) -->
+          <a href="#" class="relative w-16 h-16 bg-white rounded-xl flex items-center justify-center overflow-hidden
+                             opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 shadow-md">
+            <!-- تصویر فرضی زرین پال -->
+            <img src="" alt="زرین پال" class="w-full h-full object-contain p-1">
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- نوار پایین: کپی‌رایت، سازنده و ورژن (نکته ۳) -->
+    <!-- ========================================== -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] md:text-xs text-porcelain-200/30">
+
+      <!-- کپی رایت -->
+      <div class="text-center md:text-right">
+        تمامی حقوق مادی و معنوی این وب‌سایت متعلق به <strong>گروه اُتکس</strong> می‌باشد. © ۱۴۰5
+      </div>
+
+      <!-- سازنده و ورژن (بسیار کمرنگ و مینیمال) -->
+      <div class="flex items-center gap-4 font-mono text-porcelain-200/20">
+        <span class="hover:text-porcelain-200/50 transition-colors cursor-pointer hidden">Designed & Developed by [soroush momtahan]</span>
+        <span class="w-1 h-1 bg-porcelain-200/20 rounded-full"></span>
+        <span>v1.0.0</span>
+      </div>
+
+    </div>
+
+  </div>
+</footer>

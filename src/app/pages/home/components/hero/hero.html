@@ -1,0 +1,82 @@
+<!-- بخش Hero با پس‌زمینه رنگ پریمیوم شما -->
+<section class="relative pt-5 w-full min-h-[90vh]  md:min-h-screen flex items-center bg-porcelain-950 overflow-hidden font-sans" dir="rtl">
+  <!-- افکت‌های نوری پس‌زمینه (Glow) -->
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-600/10 blur-[150px] rounded-full pointer-events-none"></div>
+  <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-red-900/10 blur-[150px] rounded-full pointer-events-none"></div>
+
+  <!-- پترن نویز یا گرید ظریف (اختیاری برای حس صنعتی) -->
+  <div class="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none"></div>
+
+  <div class="container mx-auto px-6 max-w-7xl relative z-10 pt-20 lg:pt-0">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+      <!-- ستون محتوا (راست) -->
+      <div class="flex flex-col order-2 sm:order-1 items-start justify-start sm:items-center lg:items-start relative top-[-130px] sm:inset-0   space-y-8 animate-fade-in ">
+        <!--top-[-358px] sm:top-[-260px] md:inset-0 order-2 md:order-1-->
+        <!-- نشان اعتماد (Badge) -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-amber-500/30 backdrop-blur-sm shadow-[0_0_10px_rgba(245,158,11,0.1)]">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+          </span>
+          <span class="text-amber-500 text-sm font-semibold tracking-wider">دارای گرید +A جهانی</span>
+        </div>
+
+        <!-- تیتر اصلی -->
+        <h1 class="text-3xl sm:text-4xl md:text-6xl xl:text-7xl font-black text-white leading-tight">
+          نهایتِ اطمینـان با <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">لنت‌ترمز اُتکس</span>
+        </h1>
+
+        <!-- متن توضیحات -->
+        <p class="text-zinc-400 text-right lg:text-right text-base sm:text-lg md:text-xl max-w-lg leading-relaxed">
+          فرمولاسیون پیشرفته کُره‌ای برای ترمزگیری بی‌نقص در سخت‌ترین شرایط. بدون صدا، بدون لرزش.
+        </p>
+
+        <!-- دکمه‌های اقدام (Call to Actions) -->
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <button [routerLink]="['/products']" class="relative group overflow-hidden px-8 py-4 bg-gradient-to-r from-amber-600 to-amber-500 text-[#201804] font-bold text-lg rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(245,158,11,0.4)] flex items-center justify-center gap-2">
+            مشاهده محصولات
+            <svg class="w-5 h-5 transition-transform group-hover:-translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          </button>
+
+          <button class="px-8 py-4 bg-transparent border-2 border-zinc-700 text-white font-bold text-lg rounded-xl transition-all duration-300 hover:border-amber-500/50 hover:bg-amber-500/5 flex items-center justify-center">
+            درباره اُتکس
+          </button>
+        </div>
+      </div>
+      <!--order-1 top-[-120px]  left-[-60px] sm:inset-0 md:order-2-->
+      <!-- ستون تصویر (چپ) -->
+      <div class="relative  order-1 sm:order-2 w-full h-[200px] lg:h-[600px] left-[-30px] top-[-8px] sm:inset-0 lg:pl-5 2xl:pl-0 flex justify-center items-center">
+        <!-- برای اینکه عکس در موبایل خیلی فضا نگیرد، سایز آن کنترل شده است -->
+        <!-- کلاس animate-float را در CSS سراسری خود تعریف کنید یا از motion استفاده کنید -->
+        <div class="relative w-full  h-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.7)] animate-[pulse_4s_ease-in-out_infinite]">
+          <!--otex-feature-03.png-->
+          <img priority fill ngSrc="images/otex-hero-14.webp"
+               alt="دیسک و لنت ترمز اُتکس"
+               class="w-full h-full object-contain object-center scale-150 lg:scale-210 z-10 relative pointer-events-none drop-shadow-2xl">
+
+          <!-- یک لایه تیره برای محو کردن پایین عکس و ترکیب با پس زمینه -->
+<!--          <div class="absolute inset-0 bg-gradient-to-t from-[#201804] via-transparent to-transparent z-20"></div>-->
+        </div>
+<!--        <div class="relative w-full h-full">-->
+
+<!--          <img src="images/otex-hero-10.jpeg" class="w-full h-full object-cover">-->
+
+
+<!--          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_#201804_100%)]"></div>-->
+<!--        </div>-->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- نشانگر اسکرول به پایین (Scroll Down Indicator) -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+    <span class="text-zinc-500 text-xs font-semibold tracking-widest uppercase">ویژگی‌ها</span>
+    <div class="w-6 h-10 border-2 border-zinc-600 rounded-full flex justify-center p-1">
+      <div class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-[bounce_2s_infinite]"></div>
+    </div>
+  </div>
+
+</section>
