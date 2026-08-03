@@ -1,4 +1,4 @@
-import {Component, signal} from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-connect-hub',
@@ -9,6 +9,8 @@ import {Component, signal} from '@angular/core';
 export class ConnectHub {
   // تب پیش‌فرض روی تماس تنظیم شده است
   activeTab = signal<'contact' | 'social' | 'agencies'>('contact');
+
+  withBg = input(true);
 
   changeTab(tab: 'contact' | 'social' | 'agencies') {
     this.activeTab.set(tab);

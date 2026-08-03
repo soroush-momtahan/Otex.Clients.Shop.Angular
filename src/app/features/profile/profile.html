@@ -1,0 +1,307 @@
+<!--<section
+  class="min-h-screen bg-carbon-mesh pt-24 pb-32 px-4 md:px-8 font-sans text-porcelain-100 selection:bg-porcelain-500 selection:text-[#120e02] overflow-hidden"
+  dir="rtl">-->
+<main class="flex-1 min-h-screen bg-carbon-mesh pt-8 pb-32 px-4 md:px-8 font-sans text-porcelain-100 overflow-y-auto custom-scrollbar relative">
+  <!--<div class="max-w-6xl mx-auto space-y-6 relative z-10">-->
+  <div class="max-w-5xl mx-auto space-y-6 relative z-10">
+
+    <!-- ========================================== -->
+    <!-- NEW: هدر حساب کاربری (Profile Header) -->
+    <!-- ========================================== -->
+    <div
+      class="premium-glass-panel rounded-3xl p-5 md:p-6 flex flex-col sm:flex-row items-center justify-between gap-6 animate-enter">
+
+      <!-- اطلاعات کاربر -->
+      <div class="flex items-center gap-5 w-full sm:w-auto">
+        <!-- آواتار با افکت رینگ فلزی -->
+        <div
+          class="relative p-1 rounded-full bg-gradient-to-br from-porcelain-400 to-[#120e02] shadow-[0_0_20px_rgba(227,171,28,0.2)]">
+          <div
+            class="w-16 h-16 rounded-full bg-[#120e02] border-[3px] border-[#120e02] overflow-hidden flex items-center justify-center">
+            <!-- جایگزین با عکس کاربر -->
+            <svg class="w-8 h-8 text-porcelain-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                    d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="flex flex-col">
+          <span class="text-xs font-bold text-porcelain-500/70 tracking-widest mb-1 uppercase">کاربر تایید شده</span>
+          <h1 class="text-2xl font-black text-white">سروش ممتحن</h1>
+          <span class="text-sm text-porcelain-400 font-mono mt-0.5 tracking-wider">ID: OTX-8492</span>
+        </div>
+      </div>
+
+      <!-- دکمه ویرایش حساب (مکانیکی) -->
+      <button
+        class="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 bg-white/5 border border-porcelain-500/30 text-porcelain-200 hover:text-white rounded-xl hover:bg-porcelain-500/10 transition-all duration-300 group">
+        <svg class="w-5 h-5 group-hover:rotate-90 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 24 24">
+          <path fill="currentColor"
+                d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/>
+        </svg>
+        <span class="font-bold text-sm">تنظیمات کاربری</span>
+      </button>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- باکس ۱: داشبورد تلمتری سفارش (Main HUD) -->
+    <!-- ========================================== -->
+    <div class="premium-glass-panel rounded-[2rem] p-8 md:p-10 relative overflow-hidden animate-enter delay-100">
+
+      <!-- خط اسکن مانیتور (فقط در حالت دسکتاپ برای جلوگیری از شلوغی موبایل) -->
+      <div class="hidden md:block scanline"></div>
+
+      <!-- افکت نور اسپات لایت درون خود باکس -->
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-porcelain-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+
+      @if (hasActiveOrder()) {
+        <div class="flex flex-col relative z-10 gap-8">
+
+          <!-- هدر مانیتور -->
+          <div class="flex flex-row items-start justify-between border-b border-porcelain-500/10 pb-5">
+            <div class="flex items-center gap-3">
+              <div
+                class="relative flex items-center justify-center w-8 h-8 rounded-full bg-[#120e02] border border-porcelain-500/50 shadow-[0_0_15px_rgba(227,171,28,0.3)]">
+                <div class="w-2.5 h-2.5 bg-porcelain-400 rounded-full animate-pulse"></div>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-porcelain-500 font-bold tracking-widest uppercase">وضعیت سیستم</span>
+                <span class="text-sm font-black text-white">سفارش در جریان</span>
+              </div>
+            </div>
+
+            <div class="text-left flex flex-col items-end">
+              <span class="text-[10px] text-porcelain-500 font-bold tracking-widest uppercase mb-1">کد رهگیری</span>
+              <span
+                class="font-mono text-xl md:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-porcelain-300 to-porcelain-600 tracking-widest">
+                OTX-9842V
+              </span>
+            </div>
+          </div>
+
+          <!-- مرکز: وضعیت فعلی (طراحی صنعتی قطعات) -->
+          <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
+
+            <div class="flex-1 space-y-4 text-center lg:text-right">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-porcelain-500/10 border border-porcelain-500/30 text-porcelain-400 text-xs font-bold mb-4">
+                مرحله ۲ از ۴
+              </div>
+              <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight drop-shadow-md">
+                بسته‌بندی و آماده‌سازی
+              </h2>
+              <p class="text-porcelain-300/70 max-w-md text-sm md:text-base leading-relaxed mx-auto lg:mx-0">لنت ترمز
+                شما
+                در حال گذراندن تست نهایی کیفیت و قرارگیری در پکیجینگ اختصاصی اُتکس است.</p>
+            </div>
+
+            <!-- گرافیک تلمتری مرکزی -->
+            <div class="relative flex items-center justify-center w-40 h-40 shrink-0">
+              <svg class="absolute inset-0 w-full h-full text-porcelain-500/30 animate-slow-spin" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="1"
+                        stroke-dasharray="4 8"/>
+                <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-dasharray="15 10 5 10"/>
+              </svg>
+              <div
+                class="relative z-10 w-20 h-20 rounded-full bg-gradient-to-br from-[#1a1405] to-[#0a0801] border border-porcelain-500/50 flex items-center justify-center animate-breathe">
+                <svg class="w-9 h-9 text-porcelain-400 drop-shadow-[0_0_10px_rgba(227,171,28,0.8)]"
+                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                        d="M20.5 3l-.16.03L15 5.1L9 3L3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1l5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- پایین: Stepper و دکمه‌های اکشن (جدید) -->
+          <div class="flex flex-col md:flex-row items-center justify-between gap-8 mt-4">
+
+            <!-- Stepper -->
+            <div class="w-full md:flex-1 relative pt-4">
+              <div class="absolute left-0 right-0 top-0 h-[2px] bg-[#2a1f05] rounded-full z-0"></div>
+              <div
+                class="absolute right-0 top-0 h-[2px] bg-gradient-to-l from-porcelain-300 to-porcelain-600 rounded-full z-0 w-[50%] shadow-[0_0_15px_rgba(227,171,28,1)]"></div>
+
+              <div class="relative z-10 flex justify-between">
+                <div class="flex flex-col items-center -mt-[5px] gap-2">
+                  <div class="w-3 h-3 rounded-full bg-porcelain-400 shadow-[0_0_10px_rgba(227,171,28,0.8)]"></div>
+                  <span class="text-[11px] font-bold text-porcelain-300">تایید</span>
+                </div>
+                <div class="flex flex-col items-center -mt-[7px] gap-2">
+                  <div
+                    class="w-4 h-4 rounded-full bg-porcelain-100 border-2 border-porcelain-500 shadow-[0_0_20px_rgba(255,255,255,0.8)] animate-pulse"></div>
+                  <span class="text-[11px] font-black text-white">آماده‌سازی</span>
+                </div>
+                <div class="flex flex-col items-center -mt-[5px] gap-2 opacity-40">
+                  <div class="w-3 h-3 rounded-full bg-porcelain-700"></div>
+                  <span class="text-[11px] font-bold text-porcelain-600">ارسال</span>
+                </div>
+                <div class="flex flex-col items-center -mt-[5px] gap-2 opacity-40">
+                  <div class="w-3 h-3 rounded-full bg-porcelain-700"></div>
+                  <span class="text-[11px] font-bold text-porcelain-600">تحویل</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- دکمه‌های عملیاتی (Call to Actions) -->
+            <div class="flex items-center gap-3 w-full md:w-auto shrink-0">
+              <button
+                class="flex-1 md:flex-none px-6 py-3 bg-white/5 border border-porcelain-500/20 text-porcelain-300 rounded-xl hover:bg-white/10 hover:text-white transition-all font-bold text-sm text-center">
+                سایر سفارشات
+              </button>
+              <button
+                class="btn-industrial flex-1 md:flex-none flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-porcelain-600 to-porcelain-400 text-[#120e02] rounded-xl shadow-[0_0_20px_rgba(227,171,28,0.3)] hover:shadow-[0_0_30px_rgba(227,171,28,0.5)] transition-all hover:scale-105">
+                <span class="font-black text-sm">جزئیات سفارش</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7l7-7"/>
+                </svg>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      } @else {
+        <!-- در صورت نداشتن سفارش فعال، دکمه "تاریخچه سفارشات" را اینجا قرار دهید -->
+          <!-- حالت Standby (مینیمال و پریمیوم) -->
+          <!-- ... (مشابه کدهای قبلی خودتان اما با کلاس premium-glass-panel) ... -->
+          <!-- حالت ۲: هیچ سفارشی در جریان نیست (Standby Mode) -->
+        <div class="flex flex-col items-center justify-center py-10 text-center">
+          <div
+            class="w-24 h-24 rounded-full bg-[#120e02] border border-[#2a1f05] flex items-center justify-center mb-6 shadow-inner">
+            <svg class="w-10 h-10 text-porcelain-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.5" d="M20 7l-8-4l-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+            </svg>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-black text-porcelain-500/50">سیستم در حالت آماده‌باش</h2>
+          <p class="text-porcelain-600 mt-2">در حال حاضر هیچ سفارشی در جریان نیست.</p>
+
+          <div class="flex gap-5">
+            <button
+              class="mt-8 btn-mechanical bg-white/5 border border-porcelain-500/20 text-porcelain-300 font-black px-8 py-3 rounded-xl flex items-center gap-2">
+              تاریخچه سفارشات
+              <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                      d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2s-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2s2-.9 2-2s-.9-2-2-2zm-8.9-5h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4l-3.87 7H8.53L4.27 2H1v2h2l3.6 7.59l-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2z"/>
+              </svg>
+            </button>
+            <button
+              class="mt-8 btn-mechanical bg-porcelain-500 text-[#120e02] border border-porcelain-400 font-black px-8 py-3 rounded-xl flex items-center gap-2">
+              ثبت سفارش جدید
+              <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                      d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2s-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2s2-.9 2-2s-.9-2-2-2zm-8.9-5h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4l-3.87 7H8.53L4.27 2H1v2h2l3.6 7.59l-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- ========================================== -->
+    <!-- باکس ۲: داشبورد سخت‌افزاری Bento Grid -->
+    <!-- ========================================== -->
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 auto-rows-[160px] gap-4 md:gap-5">
+
+      <!-- کیف پول -->
+      <a href="#"
+         class="col-span-2 md:col-span-2 lg:col-span-3 premium-glass-panel rounded-3xl group flex flex-col justify-between p-6 md:p-7 relative overflow-hidden animate-enter delay-200">
+        <div
+          class="absolute -right-20 -top-20 w-40 h-40 bg-porcelain-500/10 blur-[50px] group-hover:bg-porcelain-500/25 transition-all duration-700"></div>
+        <div class="relative z-10 flex items-center justify-between">
+          <div class="flex items-center gap-2 text-porcelain-500">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                    d="M18 4H6C3.79 4 2 5.79 2 8v8c0 2.21 1.79 4 4 4h12c2.21 0 4-1.79 4-4V8c0-2.21-1.79-4-4-4m-1.86 9.77c-.24.2-.57.28-.88.2L4.15 11.25C4.45 10.52 5.16 10 6 10h12c.67 0 1.26.34 1.63.84z"/>
+            </svg>
+            <span class="font-bold text-sm tracking-wide">موجودی کیف پول</span>
+          </div>
+          <div
+            class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-porcelain-400 group-hover:bg-porcelain-500 group-hover:text-[#120e02] transition-colors duration-300">
+            <svg class="w-5 h-5 -rotate-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5 12h14m-7-7l7 7l-7 7"/>
+            </svg>
+          </div>
+        </div>
+        <div class="relative z-10 flex items-baseline gap-2 mt-auto">
+          <span
+            class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-porcelain-300 tracking-tight">۴,۵۰۰,۰۰۰</span>
+          <span class="text-sm font-bold text-porcelain-500">تومان</span>
+        </div>
+      </a>
+
+      <!-- نمایندگی (متمایز) -->
+      <a href="#"
+         class="col-span-2 md:col-span-2 lg:col-span-3 premium-glass-panel !bg-gradient-to-br !from-[#2a2008] !to-[#120e02] !border-porcelain-500/30 rounded-3xl group flex items-center p-6 md:p-7 gap-5 animate-enter delay-300">
+        <div
+          class="w-16 h-16 md:w-20 md:h-20 shrink-0 rounded-2xl bg-gradient-to-br from-porcelain-400 to-porcelain-600 flex items-center justify-center shadow-[0_0_20px_rgba(227,171,28,0.3)] group-hover:shadow-[0_0_40px_rgba(227,171,28,0.6)] group-hover:-translate-y-1 transition-all duration-500">
+          <svg class="w-8 h-8 md:w-10 md:h-10 text-[#120e02]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 2l4.3 9h-3.3v11h-2v-11H7.7L12 2z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-xl md:text-2xl font-black text-white group-hover:text-porcelain-300 transition-colors">عاملیت
+            فروش اُتکس</h3>
+          <p class="text-xs md:text-sm text-porcelain-400/80 mt-1.5 leading-relaxed">ثبت درخواست نمایندگی و همکاری
+            تجاری</p>
+        </div>
+      </a>
+
+      <!-- آدرس‌ها -->
+      <a href="#"
+         class="col-span-1 md:col-span-1 lg:col-span-2 premium-glass-panel rounded-3xl group flex flex-col items-center justify-center gap-4 animate-enter delay-400">
+        <div
+          class="w-14 h-14 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-porcelain-500/70 group-hover:bg-porcelain-500/15 group-hover:text-porcelain-400 group-hover:scale-110 group-hover:border-porcelain-500/30 transition-all duration-300">
+          <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 2.5 0 0 1 0-5a2.5 2.5 2.5 0 0 1 0 5z"/>
+          </svg>
+        </div>
+        <span class="font-bold text-sm text-porcelain-300 group-hover:text-white transition-colors">آدرس‌های من</span>
+      </a>
+
+      <!-- گاراژ -->
+      <a href="#"
+         class="col-span-1 md:col-span-1 lg:col-span-2 premium-glass-panel rounded-3xl group flex flex-col items-center justify-center gap-4 animate-enter delay-500">
+        <div
+          class="w-14 h-14 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-porcelain-500/70 group-hover:bg-porcelain-500/15 group-hover:text-porcelain-400 group-hover:scale-110 group-hover:border-porcelain-500/30 transition-all duration-300">
+          <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                  d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16z"/>
+          </svg>
+        </div>
+        <span class="font-bold text-sm text-porcelain-300 group-hover:text-white transition-colors">گاراژ من</span>
+      </a>
+
+      <!-- تیکت‌ها و پیام‌ها (برجسته شده با نشانگر LED) -->
+      <a href="#"
+         class="col-span-2 md:col-span-2 lg:col-span-2 premium-glass-panel rounded-3xl group flex flex-col items-center justify-center gap-4 animate-enter delay-500 relative">
+        <!-- Badge نوتیفیکیشن / پیام جدید -->
+        <div class="absolute top-4 right-4 flex items-center gap-1.5">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+          </span>
+          <span class="text-[10px] font-bold text-red-400">۱ پیام جدید</span>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-porcelain-500/70 group-hover:bg-porcelain-500/15 group-hover:text-porcelain-400 group-hover:scale-110 group-hover:border-porcelain-500/30 transition-all duration-300">
+          <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8a8.5 8.5 0 0 1-7.6 4.7a8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8a8.5 8.5 0 0 1 4.7-7.6a8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+        </div>
+        <span
+          class="font-bold text-sm text-porcelain-300 group-hover:text-white transition-colors">پشتیبانی و تیکت‌ها</span>
+      </a>
+
+    </div>
+  </div>
+</main>

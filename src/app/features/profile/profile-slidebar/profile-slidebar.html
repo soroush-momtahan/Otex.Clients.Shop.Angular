@@ -1,0 +1,96 @@
+<!--
+  کامپوننت Sidebar
+  در موبایل مخفی (hidden) و در سایز lg به بالا نمایش داده می‌شود (lg:flex)
+-->
+<aside class="hidden lg:flex flex-col w-[300px] h-screen sticky top-0 shrink-0 z-50
+              bg-[#161104]/80 backdrop-blur-3xl border-l border-porcelain-500/10
+              shadow-[10px_0_30px_rgba(0,0,0,0.5)] overflow-y-auto custom-scrollbar">
+
+  <!-- پترن نویز یا خطوط اسکن بک‌گراند (الهام از عکس) -->
+  <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 pointer-events-none"></div>
+
+  <!-- ========================================== -->
+  <!-- هدر سایدبار (لوگو و وضعیت سیستم) -->
+  <!-- ========================================== -->
+  <div class="p-6 relative z-10">
+    <!-- باکس استاتوس (الهام گرفته از بالا چپ عکس UAC SPOOFER) -->
+    <div class="flex items-center gap-3 p-4 rounded-2xl bg-gradient-to-br from-[#201804] to-[#120e02] border border-porcelain-500/20 shadow-inner">
+      <div class="w-10 h-10 rounded-xl bg-porcelain-500/10 border border-porcelain-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(227,171,28,0.2)]">
+        <svg class="w-6 h-6 text-porcelain-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+        </svg>
+      </div>
+      <div class="flex flex-col">
+        <h2 class="text-sm font-black text-white tracking-widest">پورتال کاربری</h2>
+        <span class="text-[10px] font-bold text-porcelain-500/70 mt-0.5">OTEX DASHBOARD 2.0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- منوی اصلی (Navigation) -->
+  <!-- ========================================== -->
+  <nav class="flex-1 px-4 pb-6 space-y-2 relative z-10">
+
+    <div class="text-[10px] font-bold text-porcelain-500/40 tracking-widest uppercase mb-4 px-2">منوی اصلی</div>
+
+    <!-- آیتم فعال (Active State - الهام از بخش Home در عکس) -->
+    <a href="#" class="relative flex items-center gap-3 px-4 py-3.5 rounded-2xl bg-gradient-to-l from-porcelain-500/20 to-transparent border border-porcelain-500/40 text-white group overflow-hidden transition-all shadow-[0_0_20px_rgba(227,171,28,0.1)]">
+
+      <!-- خط نشانگر سمت راست (رنگ طلایی خالص) -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-2/3 bg-porcelain-400 rounded-l-full shadow-[0_0_10px_rgba(227,171,28,1)]"></div>
+
+      <svg class="w-5 h-5 text-porcelain-400 drop-shadow-[0_0_8px_rgba(227,171,28,0.8)]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"/></svg>
+      <span class="font-bold text-sm tracking-wide">داشبورد</span>
+
+      <!-- نقطه نوری وضعیت (الهام از نقطه سبز در عکس) -->
+      <div class="mr-auto flex items-center justify-center w-5 h-5">
+        <div class="w-1.5 h-1.5 rounded-full bg-porcelain-400 shadow-[0_0_8px_rgba(227,171,28,1)] animate-pulse"></div>
+      </div>
+    </a>
+
+    <!-- آیتم غیرفعال (Hover State - الهام از بخش Configs در عکس) -->
+    <a href="#" class="relative flex items-center gap-3 px-4 py-3.5 rounded-2xl text-porcelain-500/60 hover:text-porcelain-200 hover:bg-white/5 border border-transparent hover:border-white/10 transition-all group">
+      <svg class="w-5 h-5 group-hover:text-porcelain-400 transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 8h-1V6c0-2.76-2.24-5-5-5S8 3.24 8 6v2H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2s-2 .9-2 2s.9 2 2 2z"/></svg>
+      <span class="font-bold text-sm tracking-wide group-hover:translate-x-1 transition-transform">سفارشات من</span>
+    </a>
+
+    <!-- آیتم غیرفعال -->
+    <a href="#" class="relative flex items-center gap-3 px-4 py-3.5 rounded-2xl text-porcelain-500/60 hover:text-porcelain-200 hover:bg-white/5 border border-transparent hover:border-white/10 transition-all group">
+      <svg class="w-5 h-5 group-hover:text-porcelain-400 transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 2.5 0 0 1 0-5a2.5 2.5 2.5 0 0 1 0 5z"/></svg>
+      <span class="font-bold text-sm tracking-wide group-hover:translate-x-1 transition-transform">آدرس‌های ثبت شده</span>
+    </a>
+
+    <div class="my-6 border-t border-porcelain-500/10"></div>
+    <div class="text-[10px] font-bold text-porcelain-500/40 tracking-widest uppercase mb-4 px-2">خدمات پیشرفته</div>
+
+    <!-- آیتم گاراژ -->
+    <a href="#" class="relative flex items-center gap-3 px-4 py-3.5 rounded-2xl text-porcelain-500/60 hover:text-porcelain-200 hover:bg-white/5 border border-transparent hover:border-white/10 transition-all group">
+      <svg class="w-5 h-5 group-hover:text-porcelain-400 transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16z"/></svg>
+      <span class="font-bold text-sm tracking-wide group-hover:translate-x-1 transition-transform">گاراژ من</span>
+    </a>
+
+    <!-- آیتم پشتیبانی (به همراه Badge) -->
+    <a href="#" class="relative flex items-center gap-3 px-4 py-3.5 rounded-2xl text-porcelain-500/60 hover:text-porcelain-200 hover:bg-white/5 border border-transparent hover:border-white/10 transition-all group">
+      <svg class="w-5 h-5 group-hover:text-porcelain-400 transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8a8.5 8.5 0 0 1-7.6 4.7a8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8a8.5 8.5 0 0 1 4.7-7.6a8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <span class="font-bold text-sm tracking-wide group-hover:translate-x-1 transition-transform">پشتیبانی / تیکت‌ها</span>
+      <!-- Badge عددی -->
+      <div class="mr-auto bg-porcelain-500 text-[#120e02] text-xs font-black px-2 py-0.5 rounded-lg shadow-[0_0_10px_rgba(227,171,28,0.5)]">
+        ۲
+      </div>
+    </a>
+  </nav>
+
+  <!-- ========================================== -->
+  <!-- بخش پایینی (خروج و پشتیبانی - الهام از پایین عکس) -->
+  <!-- ========================================== -->
+  <div class="p-4 mt-auto relative z-10 border-t border-porcelain-500/10 bg-[#120e02]/50">
+    <a href="#" class="flex items-center justify-between p-4 rounded-xl bg-red-950/20 border border-red-500/20 text-red-400 hover:bg-red-500/10 hover:border-red-500/40 hover:text-red-300 transition-all group shadow-[0_0_15px_rgba(220,38,38,0.05)] hover:shadow-[0_0_20px_rgba(220,38,38,0.15)]">
+      <div class="flex items-center gap-3">
+        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M16 17v-3H9v-4h7V7l5 5l-5 5M14 2a2 2 0 0 1 2 2v2h-2V4H5v16h9v-2h2v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"/></svg>
+        <span class="font-bold text-sm tracking-wide">خروج از حساب</span>
+      </div>
+    </a>
+  </div>
+
+</aside>

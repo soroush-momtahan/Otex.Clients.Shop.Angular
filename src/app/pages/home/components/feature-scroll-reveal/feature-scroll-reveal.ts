@@ -4,7 +4,7 @@ import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-feature-scroll-reveal',
-  imports: [ScrollReveal, NgOptimizedImage],
+  imports: [ScrollReveal],
   templateUrl: './feature-scroll-reveal.html',
   styleUrl: './feature-scroll-reveal.css',
 })

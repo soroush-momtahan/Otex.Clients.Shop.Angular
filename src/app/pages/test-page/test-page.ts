@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-import {CooperationForm} from '../../features/cooperation/components/cooperation-form/cooperation-form';
+import { Component, signal } from '@angular/core';
+import { Profile } from '../../features/profile/profile';
+import { ProfileSlidebar } from '../../features/profile/profile-slidebar/profile-slidebar';
 
 @Component({
   selector: 'app-test-page',
-  imports: [
-    CooperationForm
-  ],
+  imports: [Profile, ProfileSlidebar],
   templateUrl: './test-page.html',
   styleUrl: './test-page.css',
 })
-export class TestPage {}
+export class TestPage {
+  hasActiveOrder = signal(true);
+}

@@ -5,6 +5,7 @@ import {Hero} from './components/hero/hero';
 import {FadeProductList} from '../../features/products/components/fade-product-list/fade-product-list';
 import {Faq} from '../../core/components/faq/faq';
 import {ConnectHub} from '../../core/components/connect-hub/connect-hub';
+import { CooperationWithUs } from '../../features/cooperation/components/cooperation-with-us/cooperation-with-us';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ import {ConnectHub} from '../../core/components/connect-hub/connect-hub';
     FadeProductList,
     Faq,
     ConnectHub,
+    CooperationWithUs,
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',

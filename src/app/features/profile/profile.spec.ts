@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubmittedCooperation } from './submitted-cooperation';
+import { Profile } from './profile';
 
-describe('SubmittedCooperation', () => {
-  let component: SubmittedCooperation;
-  let fixture: ComponentFixture<SubmittedCooperation>;
+describe('Profile', () => {
+  let component: Profile;
+  let fixture: ComponentFixture<Profile>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SubmittedCooperation],
+      imports: [Profile],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SubmittedCooperation);
+    fixture = TestBed.createComponent(Profile);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

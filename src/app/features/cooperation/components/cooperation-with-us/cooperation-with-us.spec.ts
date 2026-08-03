@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CooperationBenefits } from './cooperation-benefits';
+import { CooperationWithUs } from './cooperation-with-us';
 
-describe('CooperationBenefits', () => {
-  let component: CooperationBenefits;
-  let fixture: ComponentFixture<CooperationBenefits>;
+describe('CooperationWithUs', () => {
+  let component: CooperationWithUs;
+  let fixture: ComponentFixture<CooperationWithUs>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CooperationBenefits],
+      imports: [CooperationWithUs],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CooperationBenefits);
+    fixture = TestBed.createComponent(CooperationWithUs);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

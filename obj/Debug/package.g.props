@@ -22,6 +22,7 @@
     <PackageJsonDependenciesAngularPlatformServer Condition="$(PackageJsonDependenciesAngularPlatformServer) == ''">^22.0.0</PackageJsonDependenciesAngularPlatformServer>
     <PackageJsonDependenciesAngularRouter Condition="$(PackageJsonDependenciesAngularRouter) == ''">^22.0.0</PackageJsonDependenciesAngularRouter>
     <PackageJsonDependenciesAngularSsr Condition="$(PackageJsonDependenciesAngularSsr) == ''">^22.0.6</PackageJsonDependenciesAngularSsr>
+    <PackageJsonDependenciesNgrxSignals Condition="$(PackageJsonDependenciesNgrxSignals) == ''">^21.1.1</PackageJsonDependenciesNgrxSignals>
     <PackageJsonDependenciesExpress Condition="$(PackageJsonDependenciesExpress) == ''">^5.1.0</PackageJsonDependenciesExpress>
     <PackageJsonDependenciesFuseJs Condition="$(PackageJsonDependenciesFuseJs) == ''">^7.4.2</PackageJsonDependenciesFuseJs>
     <PackageJsonDependenciesRunScriptOs Condition="$(PackageJsonDependenciesRunScriptOs) == ''">^1.1.6</PackageJsonDependenciesRunScriptOs>
@@ -40,5 +41,10 @@
     <PackageJsonDevdependenciesTailwindcss Condition="$(PackageJsonDevdependenciesTailwindcss) == ''">^4.3.2</PackageJsonDevdependenciesTailwindcss>
     <PackageJsonDevdependenciesTypescript Condition="$(PackageJsonDevdependenciesTypescript) == ''">~6.0.2</PackageJsonDevdependenciesTypescript>
     <PackageJsonDevdependenciesVitest Condition="$(PackageJsonDevdependenciesVitest) == ''">^4.0.8</PackageJsonDevdependenciesVitest>
+    <PackageJsonAllowscriptsParcelWatcher256 Condition="$(PackageJsonAllowscriptsParcelWatcher256) == ''">true</PackageJsonAllowscriptsParcelWatcher256>
+    <PackageJsonAllowscriptsEsbuild0281 Condition="$(PackageJsonAllowscriptsEsbuild0281) == ''">true</PackageJsonAllowscriptsEsbuild0281>
+    <PackageJsonAllowscriptsEsbuild0277 Condition="$(PackageJsonAllowscriptsEsbuild0277) == ''">true</PackageJsonAllowscriptsEsbuild0277>
+    <PackageJsonAllowscriptsLmdb354 Condition="$(PackageJsonAllowscriptsLmdb354) == ''">true</PackageJsonAllowscriptsLmdb354>
+    <PackageJsonAllowscriptsMsgpackrExtract304 Condition="$(PackageJsonAllowscriptsMsgpackrExtract304) == ''">true</PackageJsonAllowscriptsMsgpackrExtract304>
   </PropertyGroup>
 </Project>

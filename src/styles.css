@@ -8,6 +8,19 @@ button div {
   -webkit-tap-highlight-color: transparent;
 }
 
+@layer base {
+  body {
+    @apply select-none;
+  }
+
+  /* اجازه انتخاب متن در اینپوت‌ها و تکست‌اریاها */
+  input,
+  textarea,
+  [contenteditable="true"] {
+    @apply select-text;
+  }
+}
+
 @theme{
   /* تعریف خانواده فونت انجمن*/
   --font-anjoman: 'Anjoman', sans-serif;
@@ -64,6 +77,8 @@ button div {
   --breakpoint-sm: 41.25rem;
   --breakpoint-xs: 24rem;
 }
+
+@custom-variant hover (&:hover);
 
 @layer components {
   .form-input {

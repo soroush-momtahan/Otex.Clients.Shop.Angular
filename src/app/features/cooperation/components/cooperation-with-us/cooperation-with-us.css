@@ -1,0 +1,52 @@
+/* ورود فرم از سمت راست (Slide In) */
+@keyframes slide-in-right {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* انیمیشن تاخیردار (Stagger) برای لود شدن تک تک عناصر مثل پنل‌های دیجیتال */
+.animate-stagger-1 { opacity: 0; animation: slide-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards; }
+.animate-stagger-2 { opacity: 0; animation: slide-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; }
+.animate-stagger-3 { opacity: 0; animation: slide-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; }
+
+/* درخشش فلزی روی دکمه‌ها (Shine) */
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+.animate-shine {
+  animation: shine 1s ease-out;
+}
+
+/* افکت خط اسکنر (Scanner Line) روی آیکون تیک در مرحله آخر */
+@keyframes scan-line {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+.animate-scan-line {
+  animation: scan-line 2s linear infinite;
+}
+
+/* شناور شدن ملایم */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+/* انیمیشن ظاهر شدن صفحه تشکر */
+@keyframes success-reveal {
+  0% { opacity: 0; transform: scale(0.9) translateY(20px); filter: blur(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+.animate-success-reveal {
+  animation: success-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+

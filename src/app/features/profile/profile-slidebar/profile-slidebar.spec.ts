@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CooperationForm } from './cooperation-form';
+import { ProfileSlidebar } from './profile-slidebar';
 
-describe('CooperationForm', () => {
-  let component: CooperationForm;
-  let fixture: ComponentFixture<CooperationForm>;
+describe('ProfileSlidebar', () => {
+  let component: ProfileSlidebar;
+  let fixture: ComponentFixture<ProfileSlidebar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CooperationForm],
+      imports: [ProfileSlidebar],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CooperationForm);
+    fixture = TestBed.createComponent(ProfileSlidebar);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
