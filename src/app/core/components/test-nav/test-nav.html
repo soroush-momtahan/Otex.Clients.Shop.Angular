@@ -1,0 +1,574 @@
+<!--&lt;!&ndash; نوار ناوبری بالا - استایل پریمیوم، صنعتی و ارگونومیک (One UI Concept) &ndash;&gt;-->
+<!--<nav class="fixed left-1/2 w-[95%] max-w-7xl z-50-->
+<!--            flex flex-col justify-end overflow-hidden-->
+<!--            bg-[#201804]/80 backdrop-blur-2xl border border-porcelain-500/20 shadow-[0_15px_40px_rgba(0,0,0,0.6)]-->
+<!--            transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)] rtl:space-x-reverse font-sans-->
+<!--            -translate-x-1/2"-->
+<!--     [class.-translate-y-[150%]]="isHidden()"-->
+<!--     [class.pointer-events-none]="isHidden()"-->
+
+<!--     [class.top-4]="true"-->
+<!--     [class.h-[140px]]="isExpanded()"-->
+<!--     [class.rounded-[32px]]="isExpanded()"-->
+
+<!--     [class.h-[72px]]="!isExpanded()"-->
+<!--     [class.rounded-full]="!isExpanded()">-->
+
+<!--  &lt;!&ndash; لایه افکت نوری صنعتی (خط طلایی محو در بالای هدر) &ndash;&gt;-->
+<!--  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-transparent via-[#E9BB49]/50 to-transparent opacity-0 transition-opacity duration-700 delay-200"-->
+<!--       [class.opacity-100]="isExpanded()"></div>-->
+
+<!--  &lt;!&ndash; بخش محتوای بازشونده (Reachability Header) &ndash;&gt;-->
+<!--  &lt;!&ndash; این بخش فقط وقتی در بالای صفحه هستیم ظاهر می‌شود &ndash;&gt;-->
+<!--  <div class="absolute top-6 left-6 right-6 flex items-center justify-between transition-all duration-[500ms] ease-out"-->
+<!--       [class.opacity-100]="isExpanded()"-->
+<!--       [class.translate-y-0]="isExpanded()"-->
+<!--       [class.opacity-0]="!isExpanded()"-->
+<!--       [class.-translate-y-6]="!isExpanded()"-->
+<!--       [class.pointer-events-none]="!isExpanded()">-->
+
+<!--    <div>-->
+<!--      <h2 class="text-porcelain-50 font-bold text-2xl md:text-3xl tracking-tight drop-shadow-md">-->
+<!--        لنت <span class="font-marjor text-transparent bg-clip-text bg-gradient-to-r from-porcelain-300 to-[#E9BB49] tracking-wider relative -top-0.5">OTEX</span>-->
+<!--      </h2>-->
+<!--      <p class="text-porcelain-300/60 text-xs md:text-sm font-medium mt-1">سامانه هوشمند قطعات خودرو</p>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; یک المان تزئینی صنعتی (Industrial Badge) &ndash;&gt;-->
+<!--    <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">-->
+<!--      <div class="size-2 rounded-full bg-[#E9BB49] animate-pulse shadow-[0_0_8px_rgba(233,187,73,0.8)]"></div>-->
+<!--      <span class="text-[10px] text-porcelain-200 tracking-widest font-bold">PREMIUM</span>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; نوار اصلی تعاملی (که به پایین هل داده می‌شود) &ndash;&gt;-->
+<!--  &lt;!&ndash; این قسمت دقیقاً منوی قبلی شماست که حالا در یک ردیف در پایین قرار گرفته &ndash;&gt;-->
+<!--  <div class="flex items-center justify-between w-full px-6 transition-all duration-[600ms]"-->
+<!--       [class.pb-3]="isExpanded()"-->
+<!--       [class.pt-0]="isExpanded()"-->
+<!--       [class.py-3]="!isExpanded()">-->
+
+<!--    @if (!navService.isSearchActive()) {-->
+<!--      &lt;!&ndash; سمت راست: بخش لوگو (نسخه Compact) &ndash;&gt;-->
+<!--      <div class="flex items-center gap-3 animate-fade-in transition-all duration-500"-->
+<!--           [class.opacity-0]="isExpanded()"-->
+<!--           [class.translate-x-4]="isExpanded() && (navService.pageTitle()? '' : '')"-->
+<!--           [class.hidden]="isExpanded()"> &lt;!&ndash; مخفی کردن لوگوی کوچک وقتی منو باز است &ndash;&gt;-->
+
+<!--        @if (!navService.pageTitle()) {-->
+<!--          &lt;!&ndash; لوگوی فروشگاه در حالت Compact &ndash;&gt;-->
+<!--          <svg class="size-9 md:size-10 text-porcelain-400 drop-shadow-[0_0_8px_rgba(233,187,73,0.4)]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">-->
+<!--            <path d="M0 0h48v48H0z" fill="none"/>-->
+<!--            <defs>-->
+<!--              <mask id="SVGPfAb1cWI">-->
+<!--                <g fill="" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">-->
+<!--                  <path fill="" d="M24 40c8.837 0 16-7.163 16-16S32.837 8 24 8S8 15.163 8 24s7.163 16 16 16"/>-->
+<!--                  <path fill="#555" d="M24 28a4 4 0 1 0 0-8a4 4 0 0 0 0 8m0-24a20 20 0 0 1 20 20h-7.994A12.006 12.006 0 0 0 24 11.994z"/>-->
+<!--                </g>-->
+<!--              </mask>-->
+<!--            </defs>-->
+<!--            <path fill="currentColor" d="M0 0h48v48H0z" mask="url(#SVGPfAb1cWI)"/>-->
+<!--          </svg>-->
+<!--          <div class="w-full font-bold items-center flex text-porcelain-100 text-lg md:text-xl gap-1.5 tracking-tight">-->
+<!--            <span class="font-extrabold text-porcelain-50">لنت</span>-->
+<!--            <span class="font-marjor relative top-[-2px] text-transparent bg-clip-text bg-gradient-to-r from-porcelain-300 to-porcelain-500 tracking-wider">OTEX</span>-->
+<!--          </div>-->
+<!--        } @else {-->
+<!--          &lt;!&ndash; حالت اختصاصی: نام و آیکون صفحه &ndash;&gt;-->
+<!--          @if (navService.pageIcon(); as iconTpl) {-->
+<!--            <ng-container *ngTemplateOutlet="iconTpl"></ng-container>-->
+<!--          }-->
+<!--          @if (navService.pageTitle(); as pageTitle) {-->
+<!--            <ng-container *ngTemplateOutlet="pageTitle"></ng-container>-->
+<!--          }-->
+<!--        }-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; لینک‌های وسط (Desktop) &ndash;&gt;-->
+<!--        &lt;!&ndash; در حالت Expanded این لینک‌ها کمی به سمت راست متمایل می‌شوند تا فضا پر شود &ndash;&gt;-->
+<!--      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-porcelain-100/70 transition-all duration-500"-->
+<!--           [class.me-auto]="isExpanded()">-->
+<!--        <a [routerLink]="['/home']" routerLinkActive="text-porcelain-400 drop-shadow-[0_0_8px_rgba(233,187,73,0.5)]" class="hover:text-porcelain-300 transition-all duration-300">خانه</a>-->
+<!--        <a [routerLink]="['/products']" routerLinkActive="text-porcelain-400 drop-shadow-[0_0_8px_rgba(233,187,73,0.5)]" class="hover:text-porcelain-300 transition-all duration-300">محصولات</a>-->
+<!--        <a href="#" class="hover:text-porcelain-300 transition-all duration-300">لیست قیمت</a>-->
+<!--        <a href="#" class="hover:text-porcelain-300 transition-all duration-300">تماس با ما</a>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; سمت چپ: اکشن‌ها &ndash;&gt;-->
+<!--        &lt;!&ndash; در حالت Expanded، این دکمه‌ها در پایین‌ترین نقطه ممکن (ارگونومیک) قرار دارند &ndash;&gt;-->
+<!--      <div class="flex items-center gap-3 ms-auto">-->
+<!--        @if (navService.pageActions(); as actionsTpl) {-->
+<!--          <div class="flex items-center gap-2 border-l border-porcelain-500/20 ml-2 pl-2">-->
+<!--            <ng-container *ngTemplateOutlet="actionsTpl"></ng-container>-->
+<!--          </div>-->
+<!--        }-->
+<!--        <app-currency-changer-icon class="md:me-2 text-porcelain-200 hover:text-porcelain-400 transition-colors"/>-->
+
+<!--        &lt;!&ndash; سبد خرید &ndash;&gt;-->
+<!--        <button class="hidden md:block relative p-2 text-porcelain-200 hover:text-porcelain-400 transition-all duration-300 hover:scale-110">-->
+<!--          <svg class="size-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--            <path d="M0 0h24v24H0z" fill="none"/>-->
+<!--            <path fill="currentColor" d="M18 20H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2z" opacity=".1"/>-->
+<!--            <path fill="currentColor" d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2m-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2m6 16H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2z"/>-->
+<!--          </svg>-->
+<!--          <span class="absolute top-1 right-1 bg-gradient-to-br from-porcelain-400 to-porcelain-600 text-[#201804] font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center shadow-lg">۲</span>-->
+<!--        </button>-->
+
+<!--        &lt;!&ndash; پروفایل &ndash;&gt;-->
+<!--        <button class="hidden md:block p-2 text-porcelain-200 hover:text-porcelain-400 transition-all duration-300 hover:scale-110">-->
+<!--          <svg class="size-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--            <path d="M0 0h24v24H0z" fill="none"/>-->
+<!--            <g fill="none">-->
+<!--              <path fill="currentColor" d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2" opacity=".1"/>-->
+<!--              <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>-->
+<!--              <circle cx="12" cy="7" r="3" stroke="currentColor" stroke-width="2"/>-->
+<!--            </g>-->
+<!--          </svg>-->
+<!--        </button>-->
+<!--      </div>-->
+
+<!--    } @else {-->
+<!--      &lt;!&ndash; حالت جستجو &ndash;&gt;-->
+<!--      <div class="flex items-center justify-between w-full gap-3 animate-fade-in-fast h-12">-->
+<!--        &lt;!&ndash; کدهای جستجو دقیقا مشابه کد خودتان &ndash;&gt;-->
+<!--        <svg class="text-porcelain-400 size-7 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--          <path d="M0 0h24v24H0z" fill="none"/>-->
+<!--          <g fill="none">-->
+<!--            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/>-->
+<!--          </g>-->
+<!--        </svg>-->
+
+<!--        <input #searchInput-->
+<!--               [ngModel]="navService.searchBarQuery()"-->
+<!--               (ngModelChange)="navService.searchBarQuery.set($event)"-->
+<!--               type="text"-->
+<!--               placeholder="جستجوی کد لنت، ماشین یا برند..."-->
+<!--               class="flex-1 bg-transparent border-none outline-none text-base md:text-lg text-porcelain-50 placeholder-porcelain-300/40 w-full px-2"-->
+<!--               autocomplete="off">-->
+
+<!--        <div class="flex items-center gap-2 shrink-0 border-r border-porcelain-500/30 pr-3">-->
+<!--          <button class="p-2 text-porcelain-200 hover:text-porcelain-400 bg-white/5 hover:bg-white/10 rounded-full transition-all">-->
+<!--            <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h18M6 12h12m-9 6h6"/>-->
+<!--            </svg>-->
+<!--          </button>-->
+
+<!--          <button (click)="closeSearch()" class="p-2 text-red-400 hover:text-red-300 bg-red-500/10 hover:bg-red-500/20 rounded-full transition-all">-->
+<!--            <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/>-->
+<!--            </svg>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    }-->
+<!--  </div>-->
+<!--</nav>-->
+
+<!--&lt;!&ndash; 1. تگ Spacer: این تگ نامرئی است اما محتوای کل صفحه شما را به نرمی به پایین هل می‌دهد &ndash;&gt;-->
+<!--<div class="w-full transition-all duration-[700ms] ease-[cubic-bezier(0.25,1,0.5,1)]"-->
+<!--     [class.h-[calc(35vh+16px)]]="isExpanded()"-->
+<!--     [class.h-[88px]]="!isExpanded()">-->
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+<!--&lt;!&ndash; 2. نوار ناوبری اصلی (Fixed) &ndash;&gt;-->
+<!--<nav class="fixed top-4 left-1/2 w-[95%] max-w-7xl z-50-->
+<!--            flex flex-col justify-end overflow-hidden-->
+<!--            bg-[#201804]/85 backdrop-blur-3xl border border-porcelain-500/20 shadow-[0_20px_50px_rgba(0,0,0,0.7)]-->
+<!--            transition-all duration-[700ms] ease-[cubic-bezier(0.25,1,0.5,1)] rtl:space-x-reverse font-sans-->
+<!--            -translate-x-1/2"-->
+<!--     [class.-translate-y-[150%]]="isHidden()"-->
+<!--     [class.pointer-events-none]="isHidden()"-->
+
+<!--     [class.h-[35vh]]="isExpanded()"-->
+<!--     [class.rounded-[40px]]="isExpanded()"-->
+
+<!--     [class.h-[72px]]="!isExpanded()"-->
+<!--     [class.rounded-full]="!isExpanded()">-->
+
+<!--  &lt;!&ndash; افکت پس‌زمینه کهکشانی/صنعتی فقط برای حالت باز (۳۵ درصد صفحه) &ndash;&gt;-->
+<!--  <div-->
+<!--    class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(&#45;&#45;tw-gradient-stops))] from-[#E9BB49]/15 via-[#201804]/5 to-transparent opacity-0 transition-opacity duration-700 delay-100"-->
+<!--    [class.opacity-100]="isExpanded()"></div>-->
+
+<!--  &lt;!&ndash; خط نوری طلایی در سقف &ndash;&gt;-->
+<!--  <div-->
+<!--    class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[2px] bg-gradient-to-r from-transparent via-[#E9BB49]/80 to-transparent opacity-0 transition-opacity duration-700 delay-200"-->
+<!--    [class.opacity-100]="isExpanded()"></div>-->
+
+<!--  &lt;!&ndash; ============================================== &ndash;&gt;-->
+<!--  &lt;!&ndash; محتوای عظیم و پریمیوم (وقتی یک‌سوم صفحه باز است) &ndash;&gt;-->
+<!--  &lt;!&ndash; ============================================== &ndash;&gt;-->
+<!--  <div-->
+<!--    class="absolute inset-x-0 top-0 bottom-[72px] flex flex-col items-center justify-center transition-all duration-[600ms] ease-out"-->
+<!--    [class.opacity-100]="isExpanded()"-->
+<!--    [class.translate-y-0]="isExpanded()"-->
+<!--    [class.scale-100]="isExpanded()"-->
+<!--    [class.opacity-0]="!isExpanded()"-->
+<!--    [class.-translate-y-12]="!isExpanded()"-->
+<!--    [class.scale-90]="!isExpanded()"-->
+<!--    [class.pointer-events-none]="!isExpanded()">-->
+
+<!--    &lt;!&ndash; لوگوی درخشان و بزرگ &ndash;&gt;-->
+<!--    <svg class="size-16 md:size-20 text-porcelain-400 drop-shadow-[0_0_15px_rgba(233,187,73,0.5)] mb-3"-->
+<!--         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">-->
+<!--      <path d="M0 0h48v48H0z" fill="none"/>-->
+<!--      <defs>-->
+<!--        <mask id="SVGPfAb1cWI">-->
+<!--          <g fill="" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">-->
+<!--            <path fill="" d="M24 40c8.837 0 16-7.163 16-16S32.837 8 24 8S8 15.163 8 24s7.163 16 16 16"/>-->
+<!--            <path fill="#555"-->
+<!--                  d="M24 28a4 4 0 1 0 0-8a4 4 0 0 0 0 8m0-24a20 20 0 0 1 20 20h-7.994A12.006 12.006 0 0 0 24 11.994z"/>-->
+<!--          </g>-->
+<!--        </mask>-->
+<!--      </defs>-->
+<!--      <path fill="currentColor" d="M0 0h48v48H0z" mask="url(#SVGPfAb1cWI)"/>-->
+<!--    </svg>-->
+
+<!--    <h2-->
+<!--      class="text-porcelain-50 font-extrabold text-3xl md:text-4xl tracking-tight drop-shadow-lg flex items-center gap-2">-->
+<!--      لنت <span-->
+<!--      class="font-marjor text-transparent bg-clip-text bg-gradient-to-r from-porcelain-300 to-[#E9BB49] tracking-wider relative -top-1">OTEX</span>-->
+<!--    </h2>-->
+<!--    <p-->
+<!--      class="text-porcelain-300/80 text-xs font-bold tracking-widest mt-4 bg-white/5 px-4 py-2 rounded-full border border-white/10 backdrop-blur-md shadow-inner uppercase">-->
+<!--      سامانه هوشمند قطعات خودرو-->
+<!--    </p>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; ============================================== &ndash;&gt;-->
+<!--  &lt;!&ndash; نوار اصلی پایین (که همیشه وجود دارد) &ndash;&gt;-->
+<!--  &lt;!&ndash; ============================================== &ndash;&gt;-->
+<!--  <div class="relative z-10 flex items-center justify-between w-full px-6 transition-all duration-[700ms]"-->
+<!--       [class.py-3]="!isExpanded()"-->
+<!--       [class.pb-5]="isExpanded()"-->
+<!--       [class.pt-0]="isExpanded()">-->
+
+<!--    @if (!navService.isSearchActive()) {-->
+
+<!--      &lt;!&ndash; لوگوی کوچک (حالت فشرده) &ndash;&gt;-->
+<!--        &lt;!&ndash; نکته: در حالت بزرگ، این بخش نامرئی می‌شود تا تداخل ایجاد نکند &ndash;&gt;-->
+<!--      <div class="flex items-center gap-3 transition-all duration-500 origin-right"-->
+<!--           [class.opacity-0]="isExpanded()"-->
+<!--           [class.scale-75]="isExpanded()"-->
+<!--           [class.absolute]="isExpanded()">-->
+
+<!--        @if (!navService.pageTitle()) {-->
+<!--          <svg class="size-9 md:size-10 text-porcelain-400 drop-shadow-[0_0_8px_rgba(233,187,73,0.4)]"-->
+<!--               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">-->
+<!--            <path d="M0 0h48v48H0z" fill="none"/>-->
+<!--            <path fill="currentColor" d="M0 0h48v48H0z" mask="url(#SVGPfAb1cWI)"/>-->
+<!--          </svg>-->
+<!--          <div class="w-full font-bold items-center flex text-porcelain-100 text-lg md:text-xl gap-1.5 tracking-tight">-->
+<!--            <span class="font-extrabold text-porcelain-50">لنت</span>-->
+<!--            <span-->
+<!--              class="font-marjor relative top-[-2px] text-transparent bg-clip-text bg-gradient-to-r from-porcelain-300 to-porcelain-500 tracking-wider">OTEX</span>-->
+<!--          </div>-->
+<!--        } @else {-->
+<!--          @if (navService.pageIcon(); as iconTpl) {-->
+<!--            <ng-container *ngTemplateOutlet="iconTpl"></ng-container>-->
+<!--          }-->
+<!--          @if (navService.pageTitle(); as pageTitle) {-->
+<!--            <ng-container *ngTemplateOutlet="pageTitle"></ng-container>-->
+<!--          }-->
+<!--        }-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; لینک‌های وسط (Desktop) &ndash;&gt;-->
+<!--      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-porcelain-100/70">-->
+<!--        <a [routerLink]="['/home']" routerLinkActive="text-porcelain-400 drop-shadow-[0_0_8px_rgba(233,187,73,0.5)]"-->
+<!--           class="hover:text-porcelain-300 transition-all duration-300">خانه</a>-->
+<!--        <a [routerLink]="['/products']" routerLinkActive="text-porcelain-400 drop-shadow-[0_0_8px_rgba(233,187,73,0.5)]"-->
+<!--           class="hover:text-porcelain-300 transition-all duration-300">محصولات</a>-->
+<!--        <a href="#" class="hover:text-porcelain-300 transition-all duration-300">لیست قیمت</a>-->
+<!--        <a href="#" class="hover:text-porcelain-300 transition-all duration-300">تماس با ما</a>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; سمت چپ: اکشن‌ها (در حالت بزرگ این اکشن‌ها کل عرض را پر می‌کنند تا راحت کلیک شوند) &ndash;&gt;-->
+<!--      <div class="flex items-center gap-3 ms-auto transition-all duration-500"-->
+<!--           [class.w-full]="isExpanded()"-->
+<!--           [class.justify-between]="isExpanded()">-->
+<!--        @if (navService.pageActions(); as actionsTpl) {-->
+<!--          <div class="flex items-center gap-2 border-l border-porcelain-500/20 ml-2 pl-2">-->
+<!--            <ng-container *ngTemplateOutlet="actionsTpl"></ng-container>-->
+<!--          </div>-->
+<!--        }-->
+
+<!--        <div class="flex items-center gap-3" [class.ms-auto]="isExpanded()">-->
+<!--          <app-currency-changer-icon class="md:me-2 text-porcelain-200 hover:text-porcelain-400 transition-colors"/>-->
+
+<!--          &lt;!&ndash; سبد خرید &ndash;&gt;-->
+<!--          <button-->
+<!--            class="relative p-2 text-porcelain-200 hover:text-porcelain-400 transition-all duration-300 hover:scale-110">-->
+<!--            <svg class="size-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--              <path d="M0 0h24v24H0z" fill="none"/>-->
+<!--              <path fill="currentColor" d="M18 20H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2z"-->
+<!--                    opacity=".1"/>-->
+<!--              <path fill="currentColor"-->
+<!--                    d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2m-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2m6 16H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2z"/>-->
+<!--            </svg>-->
+<!--            <span-->
+<!--              class="absolute top-1 right-1 bg-gradient-to-br from-porcelain-400 to-porcelain-600 text-[#201804] font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center shadow-lg">۲</span>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    } @else {-->
+<!--      &lt;!&ndash; حالت جستجو &ndash;&gt;-->
+<!--      <div class="flex items-center justify-between w-full gap-3 animate-fade-in-fast h-12">-->
+<!--        &lt;!&ndash; کدهای جستجو دقیقا مشابه کد خودتان &ndash;&gt;-->
+<!--        <svg class="text-porcelain-400 size-7 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--          <path d="M0 0h24v24H0z" fill="none"/>-->
+<!--          <g fill="none">-->
+<!--            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"-->
+<!--                  d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/>-->
+<!--          </g>-->
+<!--        </svg>-->
+
+<!--        <input #searchInput-->
+<!--               [ngModel]="navService.searchBarQuery()"-->
+<!--               (ngModelChange)="navService.searchBarQuery.set($event)"-->
+<!--               type="text"-->
+<!--               placeholder="جستجوی کد لنت، ماشین یا برند..."-->
+<!--               class="flex-1 bg-transparent border-none outline-none text-base md:text-lg text-porcelain-50 placeholder-porcelain-300/40 w-full px-2"-->
+<!--               autocomplete="off">-->
+
+<!--        <div class="flex items-center gap-2 shrink-0 border-r border-porcelain-500/30 pr-3">-->
+<!--          <button-->
+<!--            class="p-2 text-porcelain-200 hover:text-porcelain-400 bg-white/5 hover:bg-white/10 rounded-full transition-all">-->
+<!--            <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
+<!--                    d="M3 6h18M6 12h12m-9 6h6"/>-->
+<!--            </svg>-->
+<!--          </button>-->
+
+<!--          <button (click)="closeSearch()"-->
+<!--                  class="p-2 text-red-400 hover:text-red-300 bg-red-500/10 hover:bg-red-500/20 rounded-full transition-all">-->
+<!--            <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">-->
+<!--              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
+<!--                    d="M18 6L6 18M6 6l12 12"/>-->
+<!--            </svg>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    }-->
+<!--  </div>-->
+<!--</nav>-->
+
+
+
+
+
+
+
+<!-- نوار ناوبری اصلی (Fixed) -->
+<!--<nav class="fixed top-4 left-1/2 w-[95%] max-w-7xl z-50-->
+<!--            flex flex-col justify-end overflow-hidden-->
+<!--            bg-[#201804]/85 backdrop-blur-3xl border border-porcelain-500/20 shadow-[0_20px_50px_rgba(0,0,0,0.7)]-->
+<!--            transition-all duration-[700ms] ease-[cubic-bezier(0.25,1,0.5,1)] rtl:space-x-reverse font-sans-->
+<!--            -translate-x-1/2"-->
+<!--     [class.-translate-y-[150%]]="navState.isHidden()"-->
+<!--     [class.pointer-events-none]="navState.isHidden()"-->
+
+<!--     [class.h-[35vh]]="navState.isExpanded()"-->
+<!--     [class.rounded-[48px]]="navState.isExpanded()"-->
+
+<!--     [class.h-[72px]]="!navState.isExpanded()"-->
+<!--     [class.rounded-[36px]]="!navState.isExpanded()"> &lt;!&ndash; مشکل زشت بودن Rounded اینجا حل شد &ndash;&gt;-->
+
+<nav class="fixed top-4 left-1/2 w-[95%] max-w-7xl z-50
+            flex flex-col justify-end overflow-hidden
+            bg-[#201804]/85 backdrop-blur-3xl border border-porcelain-500/20 shadow-[0_20px_50px_rgba(0,0,0,0.7)]
+            transition-all rtl:space-x-reverse font-sans
+            -translate-x-1/2"
+
+     [class.duration-[700ms]]="navState.isExpanded()"
+     [class.ease-[cubic-bezier(0.25,1,0.5,1)]]="navState.isExpanded()"
+     [class.duration-[300ms]]="!navState.isExpanded()"
+     [class.ease-out]="!navState.isExpanded()"
+
+     [class.-translate-y-[150%]]="navState.isHidden()"
+     [class.pointer-events-none]="navState.isHidden()"
+
+     [class.h-[35vh]]="navState.isExpanded()"
+     [class.rounded-[48px]]="navState.isExpanded()"
+
+     [class.h-[72px]]="!navState.isExpanded()"
+     [class.rounded-[36px]]="!navState.isExpanded()">
+
+  <!-- افکت پس‌زمینه کهکشانی/صنعتی فقط برای حالت باز (۳۵ درصد صفحه) -->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#E9BB49]/15 via-[#201804]/5 to-transparent opacity-0 transition-opacity duration-700 delay-100"
+    [class.opacity-100]="navState.isExpanded()"></div>
+
+  <!-- خط نوری طلایی در سقف -->
+  <div
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[2px] bg-gradient-to-r from-transparent via-[#E9BB49]/80 to-transparent opacity-0 transition-opacity duration-700 delay-200"
+    [class.opacity-100]="navState.isExpanded()"></div>
+
+  <!-- ============================================== -->
+  <!-- محتوای عظیم و پریمیوم (وقتی یک‌سوم صفحه باز است) -->
+  <!-- ============================================== -->
+  <div
+    class="absolute inset-x-0 top-0 bottom-[72px] flex flex-col items-center justify-center transition-all duration-[600ms] ease-out"
+    [class.opacity-100]="navState.isExpanded()"
+    [class.translate-y-0]="navState.isExpanded()"
+    [class.scale-100]="navState.isExpanded()"
+    [class.opacity-0]="!navState.isExpanded()"
+    [class.-translate-y-12]="!navState.isExpanded()"
+    [class.scale-90]="!navState.isExpanded()"
+    [class.pointer-events-none]="!navState.isExpanded()">
+
+    <!-- لوگوی درخشان و بزرگ -->
+    <svg class="size-16 md:size-20 text-porcelain-400 drop-shadow-[0_0_15px_rgba(233,187,73,0.5)] mb-3"
+         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+      <path d="M0 0h48v48H0z" fill="none"/>
+      <defs>
+        <mask id="SVGPfAb1cWI">
+          <g fill="" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+            <path fill="" d="M24 40c8.837 0 16-7.163 16-16S32.837 8 24 8S8 15.163 8 24s7.163 16 16 16"/>
+            <path fill="#555"
+                  d="M24 28a4 4 0 1 0 0-8a4 4 0 0 0 0 8m0-24a20 20 0 0 1 20 20h-7.994A12.006 12.006 0 0 0 24 11.994z"/>
+          </g>
+        </mask>
+      </defs>
+      <path fill="currentColor" d="M0 0h48v48H0z" mask="url(#SVGPfAb1cWI)"/>
+    </svg>
+
+    <h2
+      class="text-porcelain-50 font-extrabold text-3xl md:text-4xl tracking-tight drop-shadow-lg flex items-center gap-2">
+      لنت <span
+      class="font-marjor text-transparent bg-clip-text bg-gradient-to-r from-porcelain-300 to-[#E9BB49] tracking-wider relative -top-1">OTEX</span>
+    </h2>
+    <p
+      class="text-porcelain-300/80 text-xs font-bold tracking-widest mt-4 bg-white/5 px-4 py-2 rounded-full border border-white/10 backdrop-blur-md shadow-inner uppercase">
+      سامانه هوشمند لنت خودرو
+    </p>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- نوار اصلی پایین (که همیشه وجود دارد) -->
+  <!-- ============================================== -->
+  <div class="relative z-10 flex items-center justify-between w-full px-6 transition-all duration-[700ms]"
+       [class.py-3]="!navState.isExpanded()"
+       [class.pb-5]="navState.isExpanded()"
+       [class.pt-0]="navState.isExpanded()">
+
+    @if (!navService.isSearchActive()) {
+
+      <!-- لوگوی کوچک (حالت فشرده) -->
+      <div class="flex items-center gap-3 transition-all duration-500 origin-right"
+           [class.opacity-0]="navState.isExpanded()"
+           [class.scale-75]="navState.isExpanded()"
+           [class.absolute]="navState.isExpanded()">
+
+        <!-- محتوای لوگوی کوچک که در کدهای قبل داشتید -->
+        @if (!navService.pageTitle()) {
+          <svg class="size-9 md:size-10 text-porcelain-400 drop-shadow-[0_0_8px_rgba(233,187,73,0.4)]"
+               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+            <path d="M0 0h48v48H0z" fill="none"/>
+            <path fill="currentColor" d="M0 0h48v48H0z" mask="url(#SVGPfAb1cWI)"/>
+          </svg>
+          <div class="w-full font-bold items-center flex text-porcelain-100 text-lg md:text-xl gap-1.5 tracking-tight">
+            <span class="font-extrabold text-porcelain-50">لنت</span>
+            <span
+              class="font-marjor relative top-[-2px] text-transparent bg-clip-text bg-gradient-to-r from-porcelain-300 to-porcelain-500 tracking-wider">OTEX</span>
+          </div>
+        } @else {
+          @if (navService.pageIcon(); as iconTpl) {
+            <ng-container *ngTemplateOutlet="iconTpl"></ng-container>
+          }
+          @if (navService.pageTitle(); as pageTitle) {
+            <ng-container *ngTemplateOutlet="pageTitle"></ng-container>
+          }
+        }
+      </div>
+
+      <!-- لینک‌های وسط (Desktop) -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-porcelain-100/70">
+        <a [routerLink]="['/home']" routerLinkActive="text-porcelain-400 drop-shadow-[0_0_8px_rgba(233,187,73,0.5)]"
+           class="hover:text-porcelain-300 transition-all duration-300">خانه</a>
+        <a [routerLink]="['/products']" routerLinkActive="text-porcelain-400 drop-shadow-[0_0_8px_rgba(233,187,73,0.5)]"
+           class="hover:text-porcelain-300 transition-all duration-300">محصولات</a>
+        <a href="#" class="hover:text-porcelain-300 transition-all duration-300">لیست قیمت</a>
+        <a href="#" class="hover:text-porcelain-300 transition-all duration-300">تماس با ما</a>
+      </div>
+
+      <!-- سمت چپ: اکشن‌ها -->
+      <div class="flex items-center gap-3 ms-auto md:ms-0 transition-all duration-500"
+           [class.w-full]="navState.isExpanded()"
+           [class.justify-between]="navState.isExpanded()">
+
+        <!-- محتوای دکمه‌های اکشن که در کدهای قبل داشتید -->
+        @if (navService.pageActions(); as actionsTpl) {
+          <div class="flex items-center gap-2 border-l border-porcelain-500/20 ml-2 pl-2">
+            <ng-container *ngTemplateOutlet="actionsTpl"></ng-container>
+          </div>
+        }
+
+        <div class="flex items-center gap-3" [class.ms-auto]="navState.isExpanded()">
+          <app-currency-changer-icon class="md:me-2 text-porcelain-200 hover:text-porcelain-400 transition-colors"/>
+
+          <!-- سبد خرید -->
+          <button
+            class="relative p-2 text-porcelain-200 hover:text-porcelain-400 transition-all duration-300 hover:scale-110">
+            <svg class="size-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none"/>
+              <path fill="currentColor" d="M18 20H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2z"
+                    opacity=".1"/>
+              <path fill="currentColor"
+                    d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2m-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2m6 16H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2z"/>
+            </svg>
+            <span
+              class="absolute top-1 right-1 bg-gradient-to-br from-porcelain-400 to-porcelain-600 text-[#201804] font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center shadow-lg">۲</span>
+          </button>
+        </div>
+      </div>
+    } @else {
+      <!-- حالت جستجو -->
+      <div class="flex items-center justify-between w-full gap-3 animate-fade-in-fast h-12">
+        <!-- کدهای جستجو دقیقا مشابه کد خودتان -->
+        <svg class="text-porcelain-400 size-7 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <g fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                  d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/>
+          </g>
+        </svg>
+
+        <input #searchInput
+               [ngModel]="navService.searchBarQuery()"
+               (ngModelChange)="navService.searchBarQuery.set($event)"
+               type="text"
+               placeholder="جستجوی کد لنت، ماشین یا برند..."
+               class="flex-1 bg-transparent border-none outline-none text-base md:text-lg text-porcelain-50 placeholder-porcelain-300/40 w-full px-2"
+               autocomplete="off">
+
+        <div class="flex items-center gap-2 shrink-0 border-r border-porcelain-500/30 pr-3">
+          <button
+            class="p-2 text-porcelain-200 hover:text-porcelain-400 bg-white/5 hover:bg-white/10 rounded-full transition-all">
+            <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 6h18M6 12h12m-9 6h6"/>
+            </svg>
+          </button>
+
+          <button (click)="closeSearch()"
+                  class="p-2 text-red-400 hover:text-red-300 bg-red-500/10 hover:bg-red-500/20 rounded-full transition-all">
+            <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</nav>

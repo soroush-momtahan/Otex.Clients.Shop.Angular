@@ -171,7 +171,7 @@
   <div class="relative w-full aspect-[4/3] overflow-hidden bg-black">
     <!-- عکس محصول -->
     @defer (on viewport) {
-      <img fill ngSrc="/images/{{viewModel().product.image}}" alt="لنت ترمز {{ viewModel().product.title }}"
+      <img fill ngSrc="/images/products/{{viewModel().product.image}}" alt="لنت ترمز {{ viewModel().product.title }}"
            class="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-110 transition-transform duration-[1500ms] ease-out opacity-85">
     } @placeholder (minimum 1s) {
       <div class="skeleton-loader w-full h-full"></div>

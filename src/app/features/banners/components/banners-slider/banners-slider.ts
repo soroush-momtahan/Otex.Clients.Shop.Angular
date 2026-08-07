@@ -28,16 +28,16 @@ export class BannersSlider {
 
   // لیست بنرها
   banners = signal([
-    { id: 1, image: '/images/banner-05.jpeg', title: '' },
-    { id: 2, image: '/images/banner-09.jpeg', title: '' },
-    { id: 3, image: '/images/banner-06.jpeg', title: '' },
-    { id: 4, image: '/images/banner-04.jpeg', title: '' },
-    { id: 5, image: '/images/banner-07.jpeg', title: '' },
-    { id: 6, image: '/images/banner-08.jpeg', title: '' },
-    { id: 7, image: '/images/banner-03.jpeg', title: '' },
-    { id: 8, image: '/images/banner-10.jpeg', title: '' },
-    { id: 9, image: '/images/banner-02.jpeg', title: '' },
-    { id: 10, image: '/images/banner-11.jpeg', title: '' },
+    { id: 1, image: '/images/banners/banner-05.webp', title: '' },
+    { id: 2, image: '/images/banners/banner-09.webp', title: '' },
+    { id: 3, image: '/images/banners/banner-06.webp', title: '' },
+    { id: 4, image: '/images/banners/banner-04.webp', title: '' },
+    { id: 5, image: '/images/banners/banner-07.webp', title: '' },
+    { id: 6, image: '/images/banners/banner-08.webp', title: '' },
+    { id: 7, image: '/images/banners/banner-03.webp', title: '' },
+    { id: 8, image: '/images/banners/banner-10.webp', title: '' },
+    { id: 9, image: '/images/banners/banner-02.webp', title: '' },
+    { id: 10, image: '/images/banners/banner-11.webp', title: '' },
   ]);
 
   constructor() {

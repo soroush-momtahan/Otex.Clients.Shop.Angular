@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import {csrfHeaderInterceptor} from './core/interceptors/csrf/csrf-header.interceptor';
 
 import { routes } from './app.routes';
@@ -11,8 +11,6 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    provideHttpClient(
-      withInterceptors([csrfHeaderInterceptor])
-    ),
-  ]
+    provideHttpClient(withInterceptors([csrfHeaderInterceptor])),
+  ],
 };

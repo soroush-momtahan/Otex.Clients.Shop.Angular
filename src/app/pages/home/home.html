@@ -1,4 +1,12 @@
-<div class="pb-24 bg-porcelain-950">
+<div class=" bg-porcelain-950"
+     [class.duration-[700ms]]="navState.isExpanded()"
+     [class.ease-[cubic-bezier(0.25,1,0.5,1)]]="navState.isExpanded()"
+
+     [class.duration-[300ms]]="!navState.isExpanded()"
+     [class.ease-out]="!navState.isExpanded()"
+
+     [class.pt-[calc(35vh+16px)]]="navState.isExpanded()"
+     [class.pt-[30px]]="!navState.isExpanded()">
   <!--  <app-hero-section class="z-50"/>-->
   <app-hero/>
   <div class="relative w-full">
@@ -50,4 +58,4 @@
 
 <app-faq/>
 <app-connect-hub/>
-<app-cooperation-with-us/>
+<app-cooperation-form/>

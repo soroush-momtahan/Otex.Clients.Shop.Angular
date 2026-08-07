@@ -6,23 +6,18 @@ import {ProductDutyIcons} from './components/product-duty-icons/product-duty-ico
 import {Warning} from './components/warning/warning';
 import {Faq} from '../../core/components/faq/faq';
 import {ConnectHub} from '../../core/components/connect-hub/connect-hub';
+import { NavbarStateService } from '../../core/services/navbar/navbar-state.service';
 
 @Component({
   selector: 'app-products',
-  imports: [
-    BannersSlider,
-    ProductList,
-    ProductDutyIcons,
-    Warning,
-    Faq,
-    ConnectHub
-  ],
+  imports: [BannersSlider, ProductList, ProductDutyIcons, Warning, Faq, ConnectHub],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
 export class Products implements OnDestroy {
   searchBarValue = signal<string>('');
   navbarService = inject(NavbarService);
+  navState = inject(NavbarStateService);
 
   navService = inject(NavbarService);
 

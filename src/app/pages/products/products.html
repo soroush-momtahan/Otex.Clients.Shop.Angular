@@ -215,7 +215,18 @@
 <!--</div>-->
 
 <!-- پس‌زمینه به شدت تاریک (Dark Matter) با انتخاب متن سفارشی -->
-<div class="relative w-full min-h-screen pt-28 pb-32 bg-[#090702] overflow-x-hidden font-sans selection:bg-porcelain-500/30 selection:text-porcelain-100" dir="rtl">
+<!--<div class="relative w-full min-h-screen pt-28 pb-32 bg-[#090702] overflow-x-hidden font-sans selection:bg-porcelain-500/30 selection:text-porcelain-100 transition-all duration-[700ms] ease-[cubic-bezier(0.25,1,0.5,1)]" dir="rtl"-->
+<!--     [class.pt-[calc(35vh+26px)]]="navState.isExpanded()"-->
+<!--     [class.pt-[125px]]="!navState.isExpanded()">-->
+<div class="relative w-full min-h-screen pt-28 pb-32 bg-[#090702] overflow-x-hidden font-sans selection:bg-porcelain-500/30 selection:text-porcelain-100" dir="rtl"
+     [class.duration-[700ms]]="navState.isExpanded()"
+     [class.ease-[cubic-bezier(0.25,1,0.5,1)]]="navState.isExpanded()"
+
+     [class.duration-[300ms]]="!navState.isExpanded()"
+     [class.ease-out]="!navState.isExpanded()"
+
+     [class.pt-[calc(35vh+26px)]]="navState.isExpanded()"
+     [class.pt-[125px]]="!navState.isExpanded()">
 
   <!-- =============================== -->
   <!-- لایه 1: بافت صنعتی و سینمایی -->

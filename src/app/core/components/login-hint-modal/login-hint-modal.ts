@@ -6,40 +6,40 @@ import {LoginHintModalService} from '../../services/login-hint-modal/login-hint-
   imports: [],
   templateUrl: './login-hint-modal.html',
   styleUrl: './login-hint-modal.css',
-  standalone: true
+  standalone: true,
 })
 export class LoginHintModal {
   public loginHintModal = inject(LoginHintModalService);
 
   // آرایه های عکس شما که قبلا داشتیم...
   col1 = signal([
-    '/images/lent-01.png',
-    '/images/disk-01.png',
-    '/images/disk-04.png',
+    '/images/lents/lent-08.webp',
+    '/images/disc/disk-01.webp',
+    '/images/disc/disk-04.webp',
     // تکرار برای لوپ
-    '/images/lent-01.png',
-    '/images/disk-01.png',
-    '/images/disk-04.png',
+    '/images/lents/lent-08.webp',
+    '/images/disc/disk-05.webp',
+    '/images/disc/disk-04.webp',
   ]);
 
   col2 = signal([
-    '/images/lent-02.png',
-    '/images/disk-02.png',
-    '/images/lent-04.png',
+    '/images/lents/lent-09.webp',
+    '/images/disc/disk-02.webp',
+    '/images/lents/lent-04.webp',
     // تکرار برای لوپ
-    '/images/lent-02.png',
-    '/images/disk-02.png',
-    '/images/lents-01.png',
+    '/images/lents/lent-09.webp',
+    '/images/disc/disk-05.webp',
+    '/images/lents/lent-05.webp',
   ]);
 
   col3 = signal([
-    '/images/lents-02.png',
-    '/images/disk-03.png',
-    '/images/lent-03.png',
+    '/images/lents/lent-06.webp',
+    '/images/disc/disk-03.webp',
+    '/images/lents/lent-03.webp',
     // تکرار برای لوپ
-    '/images/lents-02.png',
-    '/images/disk-03.png',
-    '/images/lent-03.png',
+    '/images/lents/lent-06.webp',
+    '/images/disc/disk-03.webp',
+    '/images/lents/lent-03.webp',
   ]);
 
   close() {

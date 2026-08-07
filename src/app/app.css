@@ -1,0 +1,67 @@
+/*!*!* انیمیشن ضربان قلب ظریف و لوکس *!*!*/
+/*@keyframes premium-pulse {*/
+/*  0%, 100% { opacity: 1; transform: scale(1); }*/
+/*  50% { opacity: 0.7; transform: scale(0.98); }*/
+/*}*/
+
+/*!* انیمیشن برگرداندن ساعت شنی (حرف X) *!*/
+/*@keyframes hourglass-flip {*/
+/*  0% { transform: rotate(0deg); }*/
+/*  40% { transform: rotate(180deg); }*/
+/*  100% { transform: rotate(180deg); } !* مکث در حالت برعکس *!*/
+/*}*/
+
+/*.animate-premium-pulse {*/
+/*  animation: premium-pulse 2s ease-in-out infinite;*/
+/*}*/
+
+/*.animate-hourglass {*/
+/*  animation: hourglass-flip 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;*/
+/*}*/
+
+
+/* ۱. افکت بازتاب نور روی فلز برای حروف OTE */
+@keyframes metal-shine {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ۲. چرخش مکانیکی، سنگین و دقیق برای حرف X */
+/* ابتدا سریع میچرخه (مثل یک چرخ‌دنده)، بعد مکث میکنه تا حس ریختن شن القا بشه، بعد دوباره میچرخه */
+@keyframes mechanical-flip {
+  0% { transform: rotate(0deg); filter: brightness(1); }
+  15% { transform: rotate(180deg); filter: brightness(1.5); } /* چرخش سریع و درخشش آنی */
+  50% { transform: rotate(180deg); filter: brightness(1); } /* مکث */
+  65% { transform: rotate(360deg); filter: brightness(1.5); }
+  100% { transform: rotate(360deg); filter: brightness(1); }
+}
+
+/* ۳. خط اسکنر پایین باکس (مانند داشبوردهای دیجیتال یا دستگاه‌های دیاگ) */
+@keyframes scan-line {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+/* ۴. تپش بسیار ملایم و لوکس برای پس‌زمینه لودر */
+@keyframes ambient-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* اعمال کلاس‌ها */
+.animate-metal-shine {
+  animation: metal-shine 3s linear infinite;
+}
+
+.animate-mechanical-flip {
+  /* استفاده از cubic-bezier مکانیکی برای حرکت تند و توقف محکم */
+  animation: mechanical-flip 3.5s cubic-bezier(0.85, 0, 0.15, 1) infinite;
+}
+
+.animate-scan-line {
+  animation: scan-line 2s ease-in-out infinite;
+}
+
+.animate-ambient-glow {
+  animation: ambient-glow 4s ease-in-out infinite;
+}

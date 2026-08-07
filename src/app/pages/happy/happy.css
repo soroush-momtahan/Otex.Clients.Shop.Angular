@@ -1,0 +1,25 @@
+/*@keyframes slideInRight {*/
+/*  0% { opacity: 0; transform: translateX(30px); }*/
+/*  100% { opacity: 1; transform: translateX(0); }*/
+/*}*/
+
+/*@keyframes fadeInUp {*/
+/*  0% { opacity: 0; transform: translateY(40px); }*/
+/*  100% { opacity: 1; transform: translateY(0); }*/
+/*}*/
+
+/*!* اسکرول‌بار اختصاصی و جذاب برای جداول و منوها *!*/
+/*.custom-scrollbar::-webkit-scrollbar {*/
+/*  width: 6px;*/
+/*  height: 6px;*/
+/*}*/
+/*.custom-scrollbar::-webkit-scrollbar-track {*/
+/*  background: transparent;*/
+/*}*/
+/*.custom-scrollbar::-webkit-scrollbar-thumb {*/
+/*  background: rgba(233, 187, 73, 0.2); !* Porcelain 400 *!*/
+/*  border-radius: 10px;*/
+/*}*/
+/*.custom-scrollbar::-webkit-scrollbar-thumb:hover {*/
+/*  background: rgba(233, 187, 73, 0.5);*/
+/*}*/
